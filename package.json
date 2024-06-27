@@ -2,7 +2,15 @@
   "name": "rss-react-course",
   "version": "1.0.0",
   "description": "class-components",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint ./src/**/*.tsx --max-warnings 0",
+    "format:fix": "npx prettier . --write ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "devDependencies": {
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
