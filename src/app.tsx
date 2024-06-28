@@ -1,10 +1,11 @@
 import React from 'react';
+import SearchSection from './components/searchSection';
 
 class App extends React.Component {
   render(): React.ReactNode {
     return (
       <div>
-        <p>My First React App</p>
+        <SearchSection />
       </div>
     );
   }
