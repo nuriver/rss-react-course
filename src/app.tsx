@@ -1,13 +1,11 @@
 import React from 'react';
 import SearchSection from './components/searchSection';
 import SearchItemsSection from './components/searchItemsSection';
-import {
-  ItemProps,
-  Props,
-} from './components/searchItemsSection/searchItemsWrapper';
+import { Props } from './components/searchItemsSection/searchItemsWrapper';
+import { SearchItemProps } from './components/searchItemsSection/searchItem';
 
 interface AppProps {
-  planets: ItemProps[];
+  planets: SearchItemProps[];
   loading: boolean;
 }
 
