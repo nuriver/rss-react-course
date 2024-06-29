@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
-class SearchInput extends React.Component {
+interface SearchInputProps {
+  fixInput: (event: ChangeEvent<HTMLInputElement>) => void;
+}
+
+class SearchInput extends React.Component<SearchInputProps> {
   render(): React.ReactNode {
-    return <input type="text" className="search-input" />;
+    return (
+      <input
+        type="text"
+        className="search-input"
+        onChange={this.props.fixInput}
+      />
+    );
   }
 }
 

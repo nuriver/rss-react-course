@@ -13,3 +13,26 @@ html * {
 body {
   font-family: 'Inter', sans-serif;
 }
+
+.app {
+  position: relative;
+}
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 300px;
+  left: 40%;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(
+    266deg,
+    rgba(26, 4, 164, 1) 0%,
+    rgb(67, 117, 253) 100%
+  );
+  font-size: 25px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+}

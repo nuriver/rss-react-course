@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface SearchItemProps {
+export interface SearchItemProps {
   name: string;
   diameter: string;
   climate: string;

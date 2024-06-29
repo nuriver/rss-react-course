@@ -1,41 +1,12 @@
 import React from 'react';
-import SearchItem from './searchItem';
+import SearchItem, { SearchItemProps } from './searchItem';
+import { SearchItemsSectionProps } from '.';
 
-interface ItemProps {
-  name: string;
-  diameter: string;
-  climate: string;
-  terrain: string;
-  population: string;
-}
-interface MyProps {};
+export interface Props {}
 
-class SearchItemsWrapper extends React.Component<MyProps, { planets: ItemProps[] }> {
-  constructor(props: MyProps) {
-    super(props);
-    this.state = {
-      planets: [],
-    };
-  }
-  url = 'https://swapi.dev/api/planets';
-  async componentDidMount() {
-    const searchInput = localStorage.getItem('searchInput');
-    if (!searchInput) {
-      await this.fetchData(this.url);
-    } else {
-      const url = `https://swapi.dev/api/planets/?search=${searchInput}&page=1`;
-      await this.fetchData(url);
-    }
-  }
-
-  async fetchData(url: string): Promise<void> {
-    const response = await fetch(url);
-    const result = await response.json();
-    this.setState({ planets: result.results });
-  }
-
+class SearchItemsWrapper extends React.Component<SearchItemsSectionProps> {
   render(): React.ReactNode {
-    const items = this.state.planets.map((itemProps: ItemProps) => {
+    const items = this.props.itemProps.map((itemProps: SearchItemProps) => {
       return (
         <SearchItem
           key={itemProps.name}
