@@ -15,16 +15,16 @@ class ErrorBoundary extends React.Component<
     };
   }
 
-  logError = (error: Error, componentStack: React.ErrorInfo) => {
+  logError = (error: Error, componentStack: React.ErrorInfo): void => {
     console.log('Error:', error);
     console.log('Component Stack:', componentStack.componentStack);
   };
 
-  static getDerivedStateFromError() {
+  static getDerivedStateFromError(): { hasError: boolean } {
     return { hasError: true };
   }
 
-  componentDidCatch(error: Error, info: React.ErrorInfo) {
+  componentDidCatch(error: Error, info: React.ErrorInfo): void {
     this.logError(error, info);
   }
 
