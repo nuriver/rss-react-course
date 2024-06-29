@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "class-components",
   "scripts": {
+    "prepare": "npx husky install",
     "lint": "eslint ./src/**/*.tsx --max-warnings 0",
     "format:fix": "npx prettier . --write .",
     "dev": "vite",
