@@ -17,7 +17,8 @@ body {
   position: relative;
 }
 
-.loading-indicator {
+.loading-indicator,
+.error-fallback {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +36,14 @@ body {
   font-weight: 600;
   color: white;
   border-radius: 10px;
+}
+
+.error-fallback {
+  font-size: 20px;
+  padding: 17px;
+  background: none;
+  background-color: rgb(207, 4, 4);
+  box-shadow: 2px 2px 20px rgb(102, 102, 102);
 }
 
 .search-section {
@@ -89,6 +98,16 @@ body {
   transform: scale(1.05);
   border: 2px solid white;
   cursor: pointer;
+}
+
+.error-button {
+  position: absolute;
+  right: 15px;
+  width: 15%;
+  top: 25px;
+  height: auto;
+  padding: 5px;
+  background-color: rgb(203, 3, 3);
 }
 
 .search-items-section {

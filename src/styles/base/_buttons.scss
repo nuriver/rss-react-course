@@ -15,3 +15,13 @@
     cursor: pointer;
   }
 }
+
+.error-button {
+  position: absolute;
+  right: 15px;
+  width: 15%;
+  top: 25px;
+  height: auto;
+  padding: 5px;
+  background-color: rgb(203, 3, 3);
+}

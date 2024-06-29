@@ -3,6 +3,8 @@ import SearchSection from './components/searchSection';
 import SearchItemsSection from './components/searchItemsSection';
 import { Props } from './components/searchItemsSection/searchItemsWrapper';
 import { SearchItemProps } from './components/searchItemsSection/searchItem';
+import ErrorBoundary from './errorBoundary/errorBoundary';
+import ErrorButton from './errorBoundary/errorButton';
 
 interface AppProps {
   planets: SearchItemProps[];
@@ -43,10 +45,13 @@ class App extends React.Component<Props, AppProps> {
       return <p className="loading-indicator">LOADING...</p>;
     }
     return (
-      <div className="app">
-        <SearchSection updateAction={this.updateAppState} />
-        <SearchItemsSection itemProps={this.state.planets} />
-      </div>
+      <ErrorBoundary>
+        <div className="app">
+          <ErrorButton />
+          <SearchSection updateAction={this.updateAppState} />
+          <SearchItemsSection itemProps={this.state.planets} />
+        </div>
+      </ErrorBoundary>
     );
   }
 }
