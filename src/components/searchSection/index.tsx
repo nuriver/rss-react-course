@@ -17,10 +17,19 @@ class SearchSection extends React.Component<
     };
   }
 
-  fixInput = (event: ChangeEvent<HTMLInputElement>): void => {
-    const input = event.target as HTMLInputElement;
-    const inputValue = input.value.trim();
-    this.setState({ inputValue });
+  fixInput = (event?: ChangeEvent<HTMLInputElement>): void => {
+    if (event) {
+      const input = event.target as HTMLInputElement;
+      const inputValue = input.value.trim();
+      this.setState({ inputValue });
+    } else {
+      const savedInput = localStorage.getItem('searchInput');
+      if (savedInput) {
+        this.setState({ inputValue: savedInput });
+      } else {
+        this.setState({ inputValue: '' });
+      }
+    }
   };
 
   clickHandler = (): void => {
