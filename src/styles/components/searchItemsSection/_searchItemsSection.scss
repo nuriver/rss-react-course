@@ -1,0 +1,41 @@
+.search-items-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .search-items-wrapper {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 20px;
+    .search-item {
+      width: 190px;
+      height: 350px;
+      background-color: rgb(222, 237, 253);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 10px;
+      padding: 5px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 10px rgb(202, 200, 200);
+      .search-item-image {
+        width: 180px;
+        height: 150px;
+        background-image: url(/src/assets/images/planet-image.png);
+        background-size: 120%;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+      }
+      .search-item-name,
+      .search-item-descriptor {
+        font-size: 15px;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
