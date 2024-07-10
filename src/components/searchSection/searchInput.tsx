@@ -1,4 +1,8 @@
-import React, { ChangeEvent, FocusEventHandler } from 'react';
+import React, {
+  ChangeEvent,
+  FocusEventHandler,
+  KeyboardEventHandler,
+} from 'react';
 
 interface SearchInputProps {
   fixInput: (event?: ChangeEvent<HTMLInputElement>) => void;
@@ -6,12 +10,16 @@ interface SearchInputProps {
 
 class SearchInput extends React.Component<
   SearchInputProps,
-  { defaultValue: string }
+  {
+    defaultValue: string;
+    value: string;
+  }
 > {
   constructor(props: SearchInputProps) {
     super(props);
     this.state = {
       defaultValue: '',
+      value: '',
     };
   }
 
@@ -25,12 +33,16 @@ class SearchInput extends React.Component<
     }
   }
 
-  clearInput: FocusEventHandler<HTMLInputElement> = (event): void => {
+  onFocusHandler: FocusEventHandler<HTMLInputElement> = (event): void => {
     const input = event.target as HTMLInputElement;
-    input.value = '';
-    localStorage.clear();
-    this.setState({ defaultValue: '' });
-    this.props.fixInput();
+    this.setState({ value: input.value });
+  };
+
+  backspaceHandler: KeyboardEventHandler<HTMLInputElement> = (event): void => {
+    if (event.key === 'Backspace' && this.state.value.length < 2) {
+      localStorage.clear();
+      this.props.fixInput();
+    }
   };
 
   render(): React.ReactNode {
@@ -39,7 +51,8 @@ class SearchInput extends React.Component<
         type="text"
         className="search-input"
         onChange={this.props.fixInput}
-        onFocus={this.clearInput}
+        onFocus={this.onFocusHandler}
+        onKeyDown={this.backspaceHandler}
         defaultValue={this.state.defaultValue}
       />
     );
