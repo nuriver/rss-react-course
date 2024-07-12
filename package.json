@@ -8,7 +8,8 @@
     "format:fix": "npx prettier . --write .",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "repair": "npm run lint && npm run format:fix"
   },
   "husky": {
     "hooks": {
