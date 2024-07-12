@@ -15,6 +15,7 @@ body {
 
 .app {
   position: relative;
+  display: flex;
 }
 
 .loading-indicator,
@@ -46,16 +47,22 @@ body {
   box-shadow: 2px 2px 20px rgb(102, 102, 102);
 }
 
+.sidebar {
+  width: 40%;
+  background-color: rgb(239, 248, 255);
+  padding: 10px;
+  height: 100vh;
+}
+
 .search-section {
   width: 100%;
-  height: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .search-section .search-wrapper {
-  width: 60%;
-  height: 150px;
+  width: 100%;
+  height: 50px;
   background: linear-gradient(
     266deg,
     rgb(26, 4, 164) 0%,
@@ -110,52 +117,112 @@ body {
   background-color: rgb(203, 3, 3);
 }
 
+.details-close-button {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  border: none;
+  font-size: 25px;
+  font-weight: 700;
+  background-color: rgb(207, 4, 4);
+  color: white;
+  border: 2px solid white;
+}
+
 .search-items-section {
   width: 100%;
   display: flex;
   justify-content: center;
 }
 .search-items-section .search-items-wrapper {
-  width: 80%;
+  width: 100%;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
-  padding-bottom: 20px;
+  gap: 5px;
+  padding-top: 10px;
 }
 .search-items-section .search-items-wrapper .search-item {
-  width: 190px;
-  height: 350px;
-  background-color: rgb(222, 237, 253);
+  width: 100%;
+  background-color: rgb(119, 167, 250);
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  gap: 10px;
   padding: 5px;
   border-radius: 5px;
-  box-shadow: 2px 2px 10px rgb(202, 200, 200);
 }
-.search-items-section .search-items-wrapper .search-item .search-item-image {
-  width: 180px;
-  height: 150px;
-  background-image: url(/src/assets/images/planet-image.png);
-  background-size: 120%;
-  background-repeat: no-repeat;
-  background-position: center;
-  border-radius: 5px;
-}
-.search-items-section .search-items-wrapper .search-item .search-item-name,
 .search-items-section
   .search-items-wrapper
   .search-item
   .search-item-descriptor {
   font-size: 15px;
 }
-.search-items-section .search-items-wrapper .search-item .search-item-name span,
 .search-items-section
   .search-items-wrapper
   .search-item
   .search-item-descriptor
   span {
   font-weight: 600;
+}
+.search-items-section .search-items-wrapper .search-item h2 {
+  font-size: 17px;
+}
+.search-items-section .search-items-wrapper .search-item:hover {
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgb(202, 200, 200);
+  background-color: rgb(26, 4, 164);
+  color: white;
+}
+
+.details {
+  width: 100%;
+  height: 100vh;
+  padding: 30px;
+  padding-top: 40px;
+}
+.details .planet-data {
+  position: relative;
+  background: linear-gradient(
+    266deg,
+    rgb(26, 4, 164) 0%,
+    rgb(67, 117, 253) 100%
+  );
+  border-radius: 5px;
+  padding: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 2px 2px 20px rgb(102, 102, 102);
+}
+.details .planet-data .planet-data-descriptor,
+.details .planet-data h1 {
+  padding: 8px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  padding-left: 15px;
+}
+.details .planet-data .planet-data-descriptor span,
+.details .planet-data h1 span {
+  font-weight: 700;
+}
+.details .planet-data .planet-data-descriptor {
+  font-size: 20px;
+}
+.details .planet-data h1 {
+  font-size: 30px;
+  background: linear-gradient(
+    90deg,
+    rgb(26, 4, 164) 0%,
+    rgb(67, 117, 253) 100%
+  );
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.details .details-close-button {
+  position: absolute;
+  top: -15px;
+  right: -15px;
 } /*# sourceMappingURL=main.css.map */
