@@ -1,20 +1,3 @@
-import React from 'react';
-
-interface SearchButtonProps {
-  clickHandler: () => void;
+export default function SearchButton(): JSX.Element {
+  return <button className="button search-button">SEARCH</button>;
 }
-
-class SearchButton extends React.Component<SearchButtonProps> {
-  render(): React.ReactNode {
-    return (
-      <button
-        className="button search-button"
-        onClick={this.props.clickHandler}
-      >
-        SEARCH
-      </button>
-    );
-  }
-}
-
-export default SearchButton;

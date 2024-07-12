@@ -17,6 +17,7 @@ body {
 .app {
   position: relative;
 }
+
 .loading-indicator,
 .error-fallback {
   display: flex;
@@ -44,4 +45,7 @@ body {
   background: none;
   background-color: rgb(207, 4, 4);
   box-shadow: 2px 2px 20px rgb(102, 102, 102);
+}
+
+.sidebar {
 }
