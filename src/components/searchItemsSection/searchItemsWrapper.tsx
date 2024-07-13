@@ -17,9 +17,17 @@ export interface Planet {
   url: string;
 }
 
-export async function loadItems(): Promise<Planet[]> {
-  const url = 'https://swapi.dev/api/planets';
-  const fetchedData = await fetch(url);
+export async function loadItems({
+  request,
+}: {
+  request: Request;
+}): Promise<Planet[]> {
+  console.log(request);
+  const baseUrl = 'https://swapi.dev/api/planets';
+  const url = new URL(request.url);
+  const query = url.searchParams.get('search');
+  const searchUrl = `${baseUrl}/?search=${query}`;
+  const fetchedData = await fetch(searchUrl);
   const results = await fetchedData.json();
   const planets: Planet[] = results.results;
   return planets;

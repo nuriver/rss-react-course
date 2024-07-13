@@ -9,6 +9,7 @@ async function getPlanet({ params }: { params: Params }): Promise<Planet> {
 }
 
 export async function planetDataLoader({ params }: { params: Params }) {
+  console.log(params);
   const planet: Planet = await getPlanet({ params });
   return planet;
 }
