@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from 'react-router-dom';
+import { useLoaderData, Link, Params } from 'react-router-dom';
 
 export interface Planet {
   name: string;
@@ -18,16 +18,20 @@ export interface Planet {
 }
 
 export async function loadItems({
-  request,
+  params,
 }: {
-  request: Request;
+  params: Params;
 }): Promise<Planet[]> {
-  console.log(request);
-  const baseUrl = 'https://swapi.dev/api/planets';
-  const url = new URL(request.url);
-  const query = url.searchParams.get('search');
-  const searchUrl = `${baseUrl}/?search=${query}`;
-  const fetchedData = await fetch(searchUrl);
+  const query = localStorage.getItem('searchQuery');
+  const baseUrl = 'https://swapi.dev/api/planets/?search=';
+  const page = params.pageId;
+
+  const url = {
+    value: `${baseUrl}&page=${page}`,
+  };
+  if (query) url.value = `${baseUrl}${query}&page=${page}`;
+
+  const fetchedData = await fetch(url.value);
   const results = await fetchedData.json();
   const planets: Planet[] = results.results;
   return planets;

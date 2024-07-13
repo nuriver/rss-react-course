@@ -1,4 +1,9 @@
-import { Params, useLoaderData } from 'react-router-dom';
+import {
+  Params,
+  useLoaderData,
+  useNavigate,
+  useParams,
+} from 'react-router-dom';
 import { Planet } from '../searchItemsSection/searchItemsWrapper';
 
 async function getPlanet({ params }: { params: Params }): Promise<Planet> {
@@ -9,13 +14,18 @@ async function getPlanet({ params }: { params: Params }): Promise<Planet> {
 }
 
 export async function planetDataLoader({ params }: { params: Params }) {
-  console.log(params);
   const planet: Planet = await getPlanet({ params });
   return planet;
 }
 
-export default function PlanetData(): JSX.Element {
+export default function PlanetData(): JSX.Element | null {
+  const navigate = useNavigate();
   const planet = useLoaderData() as Planet;
+  const { pageId } = useParams();
+
+  function closeButtonHandler(): void {
+    navigate(`/search/${pageId}`);
+  }
 
   return (
     <div className="planet-data">
@@ -44,7 +54,14 @@ export default function PlanetData(): JSX.Element {
       <p className="planet-data-descriptor">
         <span>population:</span> {planet.population}
       </p>
-      <button className="details-close-button">X</button>
+      <button
+        className="details-close-button"
+        onClick={() => {
+          closeButtonHandler();
+        }}
+      >
+        &#10010;
+      </button>
     </div>
   );
 }

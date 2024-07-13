@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app';
 import './styles/main.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  Navigate,
+  RouterProvider,
+} from 'react-router-dom';
 import PlanetData, {
   planetDataLoader,
 } from './components/planetData/planetData';
@@ -11,6 +15,10 @@ import { loadItems } from './components/searchItemsSection/searchItemsWrapper';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Navigate to="/search/1" />,
+  },
+  {
+    path: '/search/:pageId',
     element: <App />,
     loader: loadItems,
     children: [
