@@ -189,6 +189,40 @@ body {
   color: white;
 }
 
+.pagination-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0 10px 0;
+}
+.pagination-wrapper .pagination-item {
+  display: block;
+  text-decoration: none;
+  background-color: rgb(26, 4, 164);
+  color: white;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 3px;
+  transition: all 0.2s ease-in-out;
+}
+.pagination-wrapper .pagination-item:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: rgb(88, 128, 250);
+}
+
+.no-results-indicator {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .details {
   width: 100%;
   height: 100vh;

@@ -38,3 +38,37 @@
     }
   }
 }
+
+.pagination-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin: 10px 0 10px 0;
+  .pagination-item {
+    display: block;
+    text-decoration: none;
+    background-color: rgba(26, 4, 164, 1);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 3px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+      background-color: rgb(88, 128, 250);
+    }
+  }
+}
+
+.no-results-indicator {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}

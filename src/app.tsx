@@ -7,6 +7,8 @@ export default function App(): JSX.Element {
   const navigate = useNavigate();
   const { pageId } = useParams();
 
+  console.log('app', pageId);
+
   function onClickHandler(target: HTMLElement): void {
     const searchItem = target.closest('.search-item');
     if (!searchItem) {
