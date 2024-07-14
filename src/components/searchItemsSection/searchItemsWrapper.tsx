@@ -61,7 +61,7 @@ function createPagination(count: number): JSX.Element[] {
 }
 
 function createItems(planets: Planet[] | null): JSX.Element | JSX.Element[] {
-  if (planets) {
+  if (planets && planets.length > 0) {
     const items = planets.map((planet: Planet) => {
       const planetUrl = planet.url;
       const planetNumber = planetUrl.match(/planets\/(\d+)/);
