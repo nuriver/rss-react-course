@@ -64,3 +64,26 @@ body {
   align-items: center;
   gap: 15px;
 }
+
+.loading-indicator {
+  z-index: 10;
+  top: 40%;
+  left: 40%;
+  margin: 0 auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100px;
+  background: linear-gradient(
+    266deg,
+    rgba(26, 4, 164, 1) 0%,
+    rgb(67, 117, 253) 100%
+  );
+  box-shadow: 2px 2px 20px rgb(102, 102, 102);
+}
+
+.hidden {
+  display: none;
+}

@@ -26,7 +26,6 @@ export async function planetDataLoader({ params }: { params: Params }) {
 export default function PlanetData(): JSX.Element | null {
   const navigate = useNavigate();
   const planet = useLoaderData() as Planet | null;
-
   const { pageId } = useParams();
 
   function closeButtonHandler(): void {
@@ -72,6 +71,9 @@ export default function PlanetData(): JSX.Element | null {
       >
         &#10010;
       </button>
+      {/* <div className={navigation.state === 'loading' ? 'loading-indicator' : 'hidden'}>
+        <p>LOADING...</p>
+      </div> */}
     </div>
   );
 }

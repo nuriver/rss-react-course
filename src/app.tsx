@@ -1,13 +1,17 @@
 import SearchSection from './components/searchSection/searchSection';
 import ErrorBoundary from './errorBoundary/errorBoundary';
-import { Outlet, useNavigate, useParams } from 'react-router-dom';
+import {
+  Outlet,
+  useNavigate,
+  useNavigation,
+  useParams,
+} from 'react-router-dom';
 import SearchItemsWrapper from './components/searchItemsSection/searchItemsWrapper';
 
 export default function App(): JSX.Element {
+  const navigation = useNavigation();
   const navigate = useNavigate();
   const { pageId } = useParams();
-
-  console.log('app', pageId);
 
   function onClickHandler(target: HTMLElement): void {
     const searchItem = target.closest('.search-item');
@@ -38,6 +42,13 @@ export default function App(): JSX.Element {
         <section className="details">
           <Outlet />
         </section>
+        <div
+          className={
+            navigation.state === 'loading' ? 'loading-indicator' : 'hidden'
+          }
+        >
+          <p>LOADING...</p>
+        </div>
       </div>
     </ErrorBoundary>
   );
