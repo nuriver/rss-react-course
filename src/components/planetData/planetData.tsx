@@ -71,9 +71,6 @@ export default function PlanetData(): JSX.Element | null {
       >
         &#10010;
       </button>
-      {/* <div className={navigation.state === 'loading' ? 'loading-indicator' : 'hidden'}>
-        <p>LOADING...</p>
-      </div> */}
     </div>
   );
 }
