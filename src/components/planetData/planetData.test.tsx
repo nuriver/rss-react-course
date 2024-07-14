@@ -1,12 +1,13 @@
-import '@testing-library/jest-dom';
-import { render } from '@testing-library/react';
+import { describe, expect, it, test } from 'vitest';
 import PlanetData from './planetData';
+import { render } from '@testing-library/react';
 
 test('demo', () => {
   expect(true).toBe(true);
 });
 
-test('Renders the PlanetData page', () => {
-  render(<PlanetData />);
-  expect(true).toBeTruthy();
+describe('PlanetData', () => {
+  it('renders PlanetData component', () => {
+    render(<PlanetData />);
+  });
 });
