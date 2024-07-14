@@ -37,6 +37,7 @@ export async function loadItems({
   if (query) url.value = `${baseUrl}${query}&page=${page}`;
 
   const fetchedData = await fetch(url.value);
+  if (fetchedData.status !== 200) throw new Error('Not found');
   const results = await fetchedData.json();
   const planets: Planet[] = results.results;
   const count: number = results.count;

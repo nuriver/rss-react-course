@@ -11,20 +11,24 @@ import PlanetData, {
   planetDataLoader,
 } from './components/planetData/planetData';
 import { loadItems } from './components/searchItemsSection/searchItemsWrapper';
+import ErrorPage from './errorBoundary/errorPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Navigate to="/search/1" />,
+    errorElement: <ErrorPage />,
   },
   {
     path: '/search/:pageId',
     element: <App />,
+    errorElement: <ErrorPage />,
     loader: loadItems,
     children: [
       {
         path: 'planets/:planetId',
         element: <PlanetData />,
+        errorElement: <ErrorPage />,
         loader: planetDataLoader,
       },
     ],
