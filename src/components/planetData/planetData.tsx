@@ -1,27 +1,5 @@
-import {
-  Params,
-  useLoaderData,
-  useNavigate,
-  useParams,
-} from 'react-router-dom';
-import { Planet } from '../searchItemsSection/searchItemsWrapper';
-
-async function getPlanet({
-  params,
-}: {
-  params: Params;
-}): Promise<Planet | null> {
-  const url = `https://swapi.dev/api/planets/${params.planetId}`;
-  const response = await fetch(url);
-  const planet = await response.json();
-  if (response.status !== 200) throw new Error('Not found');
-  return planet;
-}
-
-export async function planetDataLoader({ params }: { params: Params }) {
-  const planet: Planet | null = await getPlanet({ params });
-  return planet;
-}
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { Planet } from '../../types/types';
 
 export default function PlanetData(): JSX.Element | null {
   const navigate = useNavigate();

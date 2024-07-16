@@ -9,11 +9,10 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import PlanetData, {
-  planetDataLoader,
-} from './components/planetData/planetData';
-import { loadItems } from './components/searchItemsSection/searchItemsWrapper';
+import PlanetData from './components/planetData/planetData';
 import ErrorPage from './errorBoundary/errorPage';
+import { planetDataLoader } from './utilities/planetDataLoader';
+import { loadItems } from './api/api';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
