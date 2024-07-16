@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './app';
 import './styles/main.css';
 import {
   createBrowserRouter,
@@ -9,10 +8,11 @@ import {
   Route,
   RouterProvider,
 } from 'react-router-dom';
-import PlanetData from './components/planetData/planetData';
-import ErrorPage from './errorBoundary/errorPage';
+import ErrorPage from './components/ErrorPage';
 import { planetDataLoader } from './utilities/planetDataLoader';
 import { loadItems } from './api/api';
+import PlanetData from './components/PlanetData';
+import App from './App';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

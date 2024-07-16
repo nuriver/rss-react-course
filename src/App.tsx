@@ -1,12 +1,12 @@
-import SearchSection from './components/searchSection/searchSection';
-import ErrorBoundary from './errorBoundary/errorBoundary';
+import SearchSection from './components/SearchSection';
+import ErrorBoundary from './components/ErrorBoundary';
 import {
   Outlet,
   useNavigate,
   useNavigation,
   useParams,
 } from 'react-router-dom';
-import SearchItemsWrapper from './components/searchItemsSection/searchItemsWrapper';
+import SearchItemsWrapper from './components/SearchItemsWrapper';
 
 export default function App(): JSX.Element {
   const navigation = useNavigation();

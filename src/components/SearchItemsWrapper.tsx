@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
-import { LoaderItemsReturn } from '../../types/types';
-import createPagination from '../../utilities/createPagination';
-import createItems from '../../utilities/createItems';
+import { LoaderItemsReturn } from '../types/types';
+import createPagination from '../utilities/createPagination';
+import createItems from '../utilities/createItems';
 
 export default function SearchItemsWrapper(): JSX.Element {
   const { planets, count } = useLoaderData() as LoaderItemsReturn;
