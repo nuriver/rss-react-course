@@ -29,6 +29,7 @@ export default function App(): JSX.Element {
       <div className="app">
         <div
           className="sidebar"
+          role="sidebar"
           onClick={(e) => {
             const target = e.target as HTMLElement;
             onClickHandler(target);

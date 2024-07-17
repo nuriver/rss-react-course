@@ -1,17 +1,13 @@
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
-import { Planet } from '../../types/types';
+import { Planet } from '../types/types';
 
-export default function PlanetData(): JSX.Element | null {
+export default function PlanetData(): JSX.Element {
   const navigate = useNavigate();
-  const planet = useLoaderData() as Planet | null;
+  const planet = useLoaderData() as Planet;
   const { pageId } = useParams();
 
   function closeButtonHandler(): void {
     navigate(`/search/${pageId}`);
-  }
-
-  if (!planet) {
-    return null;
   }
 
   return (

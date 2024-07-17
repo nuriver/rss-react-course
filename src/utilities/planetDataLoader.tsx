@@ -3,6 +3,6 @@ import { getPlanet } from '../api/api';
 import { Planet } from '../types/types';
 
 export async function planetDataLoader({ params }: { params: Params }) {
-  const planet: Planet | null = await getPlanet({ params });
+  const planet: Planet = await getPlanet({ params });
   return planet;
 }

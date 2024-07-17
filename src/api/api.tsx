@@ -5,7 +5,7 @@ export async function getPlanet({
   params,
 }: {
   params: Params;
-}): Promise<Planet | null> {
+}): Promise<Planet> {
   const url = `https://swapi.dev/api/planets/${params.planetId}`;
   const response = await fetch(url);
   const planet = await response.json();
