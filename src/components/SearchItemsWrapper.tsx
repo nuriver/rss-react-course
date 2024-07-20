@@ -29,7 +29,6 @@ export default function SearchItemsWrapper(): JSX.Element {
   let content;
 
   if (isLoading) {
-    console.log('load');
     content = <LoadingIndicator />;
   }
   if (isSuccess) {

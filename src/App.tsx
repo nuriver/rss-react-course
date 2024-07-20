@@ -8,12 +8,7 @@ export default function App(): JSX.Element {
   const { pageId } = useParams();
 
   function onClickHandler(target: HTMLElement): void {
-    const searchItem = target.closest('.search-item');
-    if (
-      !searchItem &&
-      target.tagName.toLocaleLowerCase() !== 'button' &&
-      target.className !== 'pagination-item'
-    ) {
+    if (target.className === 'sidebar') {
       navigate(`/search/${pageId}`);
     }
   }

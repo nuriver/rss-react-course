@@ -1,15 +1,52 @@
-import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { apiSlice } from '../features/api/apiSlice';
 import { Planet } from '../types/types';
+import LoadingIndicator from './LoadingIndicator';
 
-export default function PlanetData(): JSX.Element {
-  const navigate = useNavigate();
-  const planet = useLoaderData() as Planet;
-  const { pageId } = useParams();
+const { useGetPlanetQuery } = apiSlice;
 
-  function closeButtonHandler(): void {
-    navigate(`/search/${pageId}`);
+export default function PlanetData(): JSX.Element | null {
+  const { pageId, planetId } = useParams() as {
+    pageId: string;
+    planetId: string;
+  };
+
+  const {
+    data: planet,
+    isLoading,
+    isSuccess,
+    // isError,
+    // error,
+  } = useGetPlanetQuery(planetId);
+
+  if (!planet) {
+    return null;
   }
 
+  let content;
+
+  if (isLoading) {
+    content = <LoadingIndicator />;
+  }
+  if (isSuccess) {
+    content = <PlanetDetails planet={planet} pageId={pageId} />;
+  }
+
+  return <>{content}</>;
+}
+
+function PlanetDetails({
+  planet,
+  pageId,
+}: {
+  planet: Planet;
+  pageId: string;
+}): JSX.Element {
+  const navigate = useNavigate();
+
+  function closeButtonHandler(pageId: string): void {
+    navigate(`/search/${pageId}`);
+  }
   return (
     <div className="planet-data">
       <h1>{planet.name}</h1>
@@ -40,7 +77,7 @@ export default function PlanetData(): JSX.Element {
       <button
         className="details-close-button"
         onClick={() => {
-          closeButtonHandler();
+          closeButtonHandler(pageId);
         }}
       >
         &#10010;

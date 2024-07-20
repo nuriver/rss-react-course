@@ -8,7 +8,7 @@ export const apiSlice = createApi({
     getPlanets: builder.query<PlanetsResponse, PlanetsQuery>({
       query: ({ pageId, query }) => `/planets/?search=${query}&page=${pageId}`,
     }),
-    getPlanet: builder.query<Planet, number>({
+    getPlanet: builder.query<Planet, string>({
       query: (planetId) => `/planets/${planetId}`,
     }),
   }),
