@@ -13,6 +13,7 @@ export async function getPlanet({
   return planet;
 }
 
+// TODO: delete
 export async function loadItems({
   params,
 }: {

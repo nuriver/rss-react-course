@@ -2,7 +2,7 @@ import { Planet } from '../types/types';
 import { Link } from 'react-router-dom';
 
 export default function createItems(
-  planets: Planet[] | null
+  planets: Planet[] | undefined
 ): JSX.Element | JSX.Element[] {
   if (planets && planets.length > 0) {
     const items = planets.map((planet: Planet) => {

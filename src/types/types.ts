@@ -24,3 +24,15 @@ export type RouterError = {
   statusText?: string;
   message?: string;
 };
+
+export interface PlanetsResponse {
+  count: number;
+  next: string | null;
+  previous: string | null;
+  results: Planet[];
+}
+
+export interface PlanetsQuery {
+  pageId: string;
+  query: string;
+}

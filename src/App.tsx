@@ -1,15 +1,9 @@
 import SearchSection from './components/SearchSection';
 import ErrorBoundary from './components/ErrorBoundary';
-import {
-  Outlet,
-  useNavigate,
-  useNavigation,
-  useParams,
-} from 'react-router-dom';
+import { Outlet, useNavigate, useParams } from 'react-router-dom';
 import SearchItemsWrapper from './components/SearchItemsWrapper';
 
 export default function App(): JSX.Element {
-  const navigation = useNavigation();
   const navigate = useNavigate();
   const { pageId } = useParams();
 
@@ -43,13 +37,6 @@ export default function App(): JSX.Element {
         <section className="details">
           <Outlet />
         </section>
-        <div
-          className={
-            navigation.state === 'loading' ? 'loading-indicator' : 'hidden'
-          }
-        >
-          <p>LOADING...</p>
-        </div>
       </div>
     </ErrorBoundary>
   );
