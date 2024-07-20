@@ -9,8 +9,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
-import { planetDataLoader } from './utilities/planetDataLoader';
-import { loadItems } from './api/api';
 import PlanetData from './components/PlanetData';
 import App from './App';
 import { Provider } from 'react-redux';
@@ -28,13 +26,11 @@ const router = createBrowserRouter(
         path="/search/:pageId"
         element={<App />}
         errorElement={<ErrorPage />}
-        loader={({ params }) => loadItems({ params })}
       >
         <Route
           path="planets/:planetId"
           element={<PlanetData />}
           errorElement={<ErrorPage />}
-          loader={({ params }) => planetDataLoader({ params })}
         />
       </Route>
     </Route>
