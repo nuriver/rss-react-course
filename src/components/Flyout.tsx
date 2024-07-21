@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { CSVLink } from 'react-csv';
 import { RootState } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 
@@ -23,7 +24,14 @@ export default function Flyout(): JSX.Element {
         >
           UNSELECT ALL
         </button>
-        <button className="button flyout-download-button">DOWNLOAD</button>
+        <CSVLink
+          className="button flyout-download-button"
+          data={selectedItems}
+          filename={`${selectedItems.length}_planets.csv`}
+          target="_blank"
+        >
+          DOWNLOAD
+        </CSVLink>
       </div>
     </div>
   );

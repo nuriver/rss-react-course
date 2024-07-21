@@ -330,6 +330,7 @@ body {
 }
 
 .flyout-wrapper {
+  width: 35%;
   display: flex;
   flex-direction: column;
   padding: 8px;
@@ -345,12 +346,19 @@ body {
 .flyout-wrapper .flyout-buttons-container {
   display: flex;
   gap: 10px;
+  align-self: center;
 }
 .flyout-wrapper .flyout-buttons-container .button {
   width: 140px;
 }
 .flyout-wrapper .flyout-buttons-container .flyout-unselect-all-button {
   background-color: rgb(213, 2, 2);
+}
+.flyout-wrapper .flyout-buttons-container .flyout-download-button {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .flyout-wrapper .flyout-count {
   font-weight: 600;
