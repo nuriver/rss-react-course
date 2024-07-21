@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Planet } from '../src/types/types';
-import createItems from '../src/utilities/createItems';
+import createItems from '../src/components/SearchItems';
 
 export const defaultPlanet1: Planet = {
   name: 'Alderaan',

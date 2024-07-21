@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import SearchItemsWrapper from '../../src/components/SearchItemsWrapper';
 import { MemoryRouter, Route, Routes, useLoaderData } from 'react-router-dom';
 import { mockData, mockPages, planetLinks } from '../testData';
-import createItems from '../../src/utilities/createItems';
+import createItems from '../../src/components/SearchItems';
 import createPagination from '../../src/utilities/createPagination';
 import { LoaderItemsReturn } from '../../src/types/types';
 

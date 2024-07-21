@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import createItems from '../utilities/createItems';
 import { apiSlice } from '../features/api/apiSlice';
 import Pagination from './Pagination';
 import LoadingIndicator from './LoadingIndicator';
+import SearchItems from './SearchItems';
 
 const { useGetPlanetsQuery } = apiSlice;
 
@@ -24,15 +24,13 @@ export default function SearchItemsWrapper(): JSX.Element {
     // error,
   } = useGetPlanetsQuery({ pageId, query });
 
-  const items = createItems(planets?.results);
-
   let content;
 
   if (isLoading) {
     content = <LoadingIndicator />;
   }
   if (isSuccess) {
-    content = items;
+    content = <SearchItems planets={planets.results} />;
   }
 
   return (

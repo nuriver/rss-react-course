@@ -48,9 +48,10 @@ body {
 }
 
 .sidebar {
-  width: 55%;
+  width: 60%;
   background-color: rgb(239, 248, 255);
   padding: 10px;
+  padding-top: 20px;
 }
 
 .error-page {
@@ -198,6 +199,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 .search-section .search-wrapper {
   width: 100%;
@@ -215,7 +217,7 @@ body {
   box-shadow: 2px 2px 20px rgb(102, 102, 102);
 }
 .search-section .search-wrapper .search-input {
-  width: 70%;
+  width: 55%;
   height: 30px;
   border: none;
   font-family: inherit;
@@ -226,6 +228,10 @@ body {
 }
 .search-section .search-wrapper .search-input:focus {
   outline-color: rgb(101, 158, 245);
+}
+.search-section .search-wrapper .button {
+  width: 30%;
+  font-size: 15px;
 }
 
 .search-items-section {
@@ -248,32 +254,44 @@ body {
   width: 100%;
   background-color: rgb(119, 167, 250);
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding: 5px;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  padding-left: 15px;
+  padding-right: 15px;
   border-radius: 5px;
 }
-.search-items-section
-  .search-items-wrapper
-  .search-item
-  .search-item-descriptor {
-  font-size: 15px;
-}
-.search-items-section
-  .search-items-wrapper
-  .search-item
-  .search-item-descriptor
-  span {
-  font-weight: 600;
-}
 .search-items-section .search-items-wrapper .search-item h2 {
-  font-size: 17px;
+  font-size: 20px;
+}
+.search-items-section .search-items-wrapper .search-item-image {
+  width: 25px;
+  height: 25px;
+  background-image: url('/src/assets/images/planet-icon.svg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.search-items-section .search-items-wrapper .search-item-checkbox {
+  width: 15px;
+  height: 15px;
+  margin-left: auto;
+}
+.search-items-section .search-items-wrapper .search-item-checkbox:hover {
+  cursor: pointer;
 }
 .search-items-section .search-items-wrapper .search-item:hover {
   cursor: pointer;
   box-shadow: 2px 2px 10px rgb(202, 200, 200);
   background-color: rgb(26, 4, 164);
   color: white;
+}
+.search-items-section
+  .search-items-wrapper
+  .search-item:hover
+  .search-item-image {
+  background-image: url('/src/assets/images/planet-icon-light.svg');
 }
 
 .pagination-wrapper {

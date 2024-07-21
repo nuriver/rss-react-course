@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import createItems from '../../src/utilities/createItems';
+import createItems from '../../src/components/SearchItems';
 import { planets as testPlanets } from '../testData';
 import { BrowserRouter } from 'react-router-dom';
 

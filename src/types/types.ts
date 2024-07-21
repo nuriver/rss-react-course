@@ -36,3 +36,8 @@ export interface PlanetsQuery {
   pageId: string;
   query: string;
 }
+
+export interface SelectionState {
+  selectedItems: Planet[];
+  showFlyout: boolean;
+}
