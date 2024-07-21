@@ -1,0 +1,31 @@
+.flyout-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 5px;
+  border-radius: 10px;
+  position: fixed;
+  bottom: 2px;
+  border: 3px dashed blue;
+  background: rgb(181, 211, 253);
+  box-shadow: 2px 2px 15px rgb(102, 102, 102);
+  transition: all 0.2s ease-in-out;
+  .flyout-buttons-container {
+    display: flex;
+    gap: 10px;
+    .button {
+      width: 140px;
+    }
+    .flyout-unselect-all-button {
+      background-color: rgb(213, 2, 2);
+    }
+  }
+  .flyout-count {
+    font-weight: 600;
+    align-self: center;
+  }
+}
+
+.flyout-hidden {
+  bottom: -100px;
+}

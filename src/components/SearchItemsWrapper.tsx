@@ -3,6 +3,7 @@ import { apiSlice } from '../features/api/apiSlice';
 import Pagination from './Pagination';
 import LoadingIndicator from './LoadingIndicator';
 import SearchItems from './SearchItems';
+import Flyout from './Flyout';
 
 const { useGetPlanetsQuery } = apiSlice;
 
@@ -37,6 +38,7 @@ export default function SearchItemsWrapper(): JSX.Element {
     <div className="search-items-wrapper">
       {content}
       <Pagination count={planets?.count} />
+      <Flyout />
     </div>
   );
 }

@@ -10,11 +10,12 @@ export default function SearchItems({
 }: {
   planets: Planet[] | undefined;
 }): JSX.Element | JSX.Element[] {
+  const dispatch = useDispatch();
   const selectedItems = useSelector(
     (state: RootState) => state.selection.selectedItems
   );
-  const dispatch = useDispatch();
 
+  console.log(selectedItems);
   if (planets && planets.length > 0) {
     const handleCheckboxClick: MouseEventHandler<HTMLInputElement> = (
       event
@@ -41,6 +42,7 @@ export default function SearchItems({
       const planetNumber = planetUrl.match(/planets\/(\d+)/);
       if (!planetNumber) throw new Error('No planet number');
       const isSelected = selectedItems.includes(planet);
+
       return (
         <Link
           key={planetNumber[1]}
@@ -54,7 +56,7 @@ export default function SearchItems({
             type="checkbox"
             className="search-item-checkbox"
             onClick={handleCheckboxClick}
-            defaultChecked={isSelected}
+            checked={isSelected ? true : false}
           />
         </Link>
       );
