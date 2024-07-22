@@ -15,7 +15,6 @@ export default function SearchItems({
     (state: RootState) => state.selection.selectedItems
   );
 
-  console.log(selectedItems);
   if (planets && planets.length > 0) {
     const handleCheckboxClick: MouseEventHandler<HTMLInputElement> = (
       event
@@ -56,7 +55,8 @@ export default function SearchItems({
             type="checkbox"
             className="search-item-checkbox"
             onClick={handleCheckboxClick}
-            checked={isSelected ? true : false}
+            checked={isSelected}
+            onChange={() => {}}
           />
         </Link>
       );
