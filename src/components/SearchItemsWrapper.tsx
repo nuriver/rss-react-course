@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { apiSlice } from '../features/api/apiSlice';
 import Pagination from './Pagination';
 import LoadingIndicator from './LoadingIndicator';
@@ -10,6 +10,7 @@ const { useGetPlanetsQuery } = apiSlice;
 export default function SearchItemsWrapper(): JSX.Element {
   const { pageId } = useParams() as { pageId: string };
   const searchQuery = localStorage.getItem('searchQuery');
+  const navigate = useNavigate();
 
   let query = '';
 
@@ -21,8 +22,7 @@ export default function SearchItemsWrapper(): JSX.Element {
     data: planets,
     isLoading,
     isSuccess,
-    // isError,
-    // error,
+    isError,
   } = useGetPlanetsQuery({ pageId, query });
 
   let content;
@@ -30,8 +30,13 @@ export default function SearchItemsWrapper(): JSX.Element {
   if (isLoading) {
     content = <LoadingIndicator />;
   }
+
   if (isSuccess) {
     content = <SearchItems planets={planets.results} />;
+  }
+
+  if (isError) {
+    navigate('/404');
   }
 
   return (

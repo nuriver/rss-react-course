@@ -5,31 +5,32 @@ import LoadingIndicator from './LoadingIndicator';
 
 const { useGetPlanetQuery } = apiSlice;
 
-export default function PlanetData(): JSX.Element | null {
+export default function PlanetData(): JSX.Element {
   const { pageId, planetId } = useParams() as {
     pageId: string;
     planetId: string;
   };
+  const navigate = useNavigate();
 
   const {
     data: planet,
     isLoading,
     isSuccess,
-    // isError,
-    // error,
+    isError,
   } = useGetPlanetQuery(planetId);
-
-  if (!planet) {
-    return null;
-  }
 
   let content;
 
   if (isLoading) {
     content = <LoadingIndicator />;
   }
+
   if (isSuccess) {
     content = <PlanetDetails planet={planet} pageId={pageId} />;
+  }
+
+  if (isError) {
+    navigate(`/search/${pageId}/404`);
   }
 
   return <>{content}</>;
@@ -47,6 +48,7 @@ function PlanetDetails({
   function closeButtonHandler(pageId: string): void {
     navigate(`/search/${pageId}`);
   }
+
   return (
     <div className="planet-data">
       <h1>{planet.name}</h1>
