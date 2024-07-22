@@ -23,7 +23,7 @@ export default function App(): JSX.Element {
 
   return (
     <ErrorBoundary>
-      <div className="app">
+      <div className="app star-wars-theme">
         <div
           className="sidebar"
           role="sidebar"
