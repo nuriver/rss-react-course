@@ -21,13 +21,14 @@ export default function SearchItemsWrapper(): JSX.Element {
   const {
     data: planets,
     isLoading,
+    isFetching,
     isSuccess,
     isError,
   } = useGetPlanetsQuery({ pageId, query });
 
   let content;
 
-  if (isLoading) {
+  if (isFetching || isLoading) {
     content = <LoadingIndicator />;
   }
 

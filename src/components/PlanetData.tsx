@@ -5,7 +5,7 @@ import LoadingIndicator from './LoadingIndicator';
 
 const { useGetPlanetQuery } = apiSlice;
 
-export default function PlanetData(): JSX.Element {
+export default function PlanetData(): JSX.Element | null {
   const { pageId, planetId } = useParams() as {
     pageId: string;
     planetId: string;
@@ -14,26 +14,24 @@ export default function PlanetData(): JSX.Element {
 
   const {
     data: planet,
-    isLoading,
+    isFetching,
     isSuccess,
     isError,
-  } = useGetPlanetQuery(planetId);
+  } = useGetPlanetQuery(planetId, { skip: false });
 
-  let content;
-
-  if (isLoading) {
-    content = <LoadingIndicator />;
+  if (isFetching) {
+    return <LoadingIndicator />;
   }
 
   if (isSuccess) {
-    content = <PlanetDetails planet={planet} pageId={pageId} />;
+    return <PlanetDetails planet={planet} pageId={pageId} />;
   }
 
   if (isError) {
     navigate(`/search/${pageId}/404`);
   }
 
-  return <>{content}</>;
+  return null;
 }
 
 function PlanetDetails({

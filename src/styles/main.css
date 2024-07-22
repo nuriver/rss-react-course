@@ -68,7 +68,7 @@ body {
 .loading-indicator {
   z-index: 100;
   top: 40%;
-  left: 40%;
+  left: 30%;
   margin: 0 auto;
   position: absolute;
   display: flex;
@@ -96,6 +96,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  position: relative;
 }
 .details .planet-data {
   position: relative;
