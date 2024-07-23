@@ -1,14 +1,17 @@
 import {
   ChangeEventHandler,
   MouseEventHandler,
+  useContext,
   useEffect,
   useState,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { ThemeContext } from '../App';
 
 export default function SearchSection(): JSX.Element {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
 
   const searchClickHandler: MouseEventHandler<HTMLButtonElement> = (
     event
@@ -32,7 +35,14 @@ export default function SearchSection(): JSX.Element {
   };
 
   return (
-    <div className="search-section" role="search">
+    <div
+      className={
+        theme === 'light'
+          ? 'search-section'
+          : 'search-section search-section-dark'
+      }
+      role="search"
+    >
       <div className="search-wrapper">
         <input
           type="text"

@@ -4,6 +4,8 @@ import Pagination from './Pagination';
 import LoadingIndicator from './LoadingIndicator';
 import SearchItems from './SearchItems';
 import Flyout from './Flyout';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 const { useGetPlanetsQuery } = apiSlice;
 
@@ -11,6 +13,7 @@ export default function SearchItemsWrapper(): JSX.Element {
   const { pageId } = useParams() as { pageId: string };
   const searchQuery = localStorage.getItem('searchQuery');
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
 
   let query = '';
 
@@ -41,7 +44,13 @@ export default function SearchItemsWrapper(): JSX.Element {
   }
 
   return (
-    <div className="search-items-wrapper">
+    <div
+      className={
+        theme === 'light'
+          ? 'search-items-wrapper'
+          : 'search-items-wrapper search-items-wrapper-dark'
+      }
+    >
       {content}
       <Pagination count={planets?.count} />
       <Flyout />

@@ -17,136 +17,43 @@ body {
   position: relative;
   display: flex;
 }
+.app .theme-toggle {
+  margin-right: 30px;
+  margin-top: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 5px 8px 5px 8px;
+  text-wrap: nowrap;
+}
 
-.star-wars-theme {
+.app-dark {
   background-image: url(/src/assets/images/a7588dae699a1d5342d585c901bbf36d.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px;
 }
-.star-wars-theme .flyout-wrapper {
-  background: none;
-  box-shadow: none;
-  border: none;
-}
-.star-wars-theme .sidebar {
+.app-dark .sidebar {
   background-color: #161616;
 }
-.star-wars-theme .sidebar .search-section .search-wrapper {
-  background: #202021;
-  box-shadow: none;
-}
-.star-wars-theme .sidebar .search-section .search-wrapper .button {
-  background-color: #303033;
-  border-left: 6px solid #da1e76;
-  border-right: 6px solid #da1e76;
-  color: #da1e76;
-  font-weight: 400;
-}
-.star-wars-theme .sidebar .search-section .search-wrapper .button:hover {
-  border: 1px solid #da1e76;
-  border-left: 6px solid #da1e76;
-  border-right: 6px solid #da1e76;
-}
-.star-wars-theme .sidebar .search-items-wrapper .search-item {
-  background-color: #303033;
-  border-left: 6px solid #4ab0e7;
-  border-right: 6px solid #4ab0e7;
-  color: #4ab0e7;
-}
-.star-wars-theme .sidebar .search-items-wrapper .search-item h2 {
-  font-weight: 500;
-}
-.star-wars-theme .sidebar .search-items-wrapper .search-item:hover {
-  box-shadow: none !important;
-  background-color: #303033;
-  border: 1px solid #4ab0e7;
-  border-left: 6px solid #4ab0e7;
-  border-right: 6px solid #4ab0e7;
-  color: #4ab0e7;
-}
-.star-wars-theme
-  .sidebar
-  .search-items-wrapper
-  .search-item:hover
-  .search-item-image {
-  background-image: url(/src/assets/images/planete-icon-blue.svg);
-}
-.star-wars-theme .sidebar .search-items-wrapper .search-item-image {
-  background-image: url(/src/assets/images/planete-icon-blue.svg);
-}
-.star-wars-theme .sidebar .pagination-item {
-  background-color: #303033;
-  border: 2px solid #da1e76;
-  color: #da1e76;
-  font-weight: 400;
-}
-.star-wars-theme .sidebar .pagination-item:hover {
-  background-color: #303033;
-}
-.star-wars-theme .flyout-wrapper {
-  background-color: #202021;
-}
-.star-wars-theme .flyout-wrapper p {
-  color: white;
-  font-weight: 400;
-}
-.star-wars-theme .flyout-wrapper .button {
-  background-color: #303033 !important;
-  font-weight: 400;
-}
-.star-wars-theme .flyout-wrapper .flyout-unselect-all-button {
-  background-color: #303033;
-  border-left: 6px solid #da1e76;
-  border-right: 6px solid #da1e76;
-  color: #da1e76;
-}
-.star-wars-theme .flyout-wrapper .flyout-unselect-all-button:hover {
-  border: 1px solid #da1e76;
-  border-left: 6px solid #da1e76;
-  border-right: 6px solid #da1e76;
-}
-.star-wars-theme .flyout-wrapper .flyout-download-button {
-  border-left: 6px solid #4ab0e7;
-  border-right: 6px solid #4ab0e7;
-  color: #4ab0e7;
-}
-.star-wars-theme .flyout-wrapper .flyout-download-button:hover {
-  border: 1px solid #4ab0e7;
-  border-left: 6px solid #4ab0e7;
-  border-right: 6px solid #4ab0e7;
-}
-.star-wars-theme .details .planet-data {
-  background: none;
-  box-shadow: 2px 2px 40px rgb(35, 35, 35);
-  background-color: #161616;
-}
-.star-wars-theme .details .planet-data h1 {
-  background: none;
-  background-color: #303033;
-  color: #da1e76;
-}
-.star-wars-theme .details .planet-data .planet-data-descriptor {
-  background-color: #303033;
-  color: white;
-}
-.star-wars-theme .details .planet-data .planet-data-descriptor span {
-  color: #4ab0e7;
-}
-.star-wars-theme .details .planet-data .details-close-button {
-  background-color: #303033;
-  border: 3px solid #da1e76;
-  color: #da1e76;
-}
-.star-wars-theme .details .planet-data .details-close-button:hover {
-  box-shadow: none;
-}
-.star-wars-theme .loading-indicator {
+.app-dark .loading-indicator {
   background: none;
   background-color: #303033;
   box-shadow: none;
   border: 2px solid #4ab0e7;
   font-weight: 400;
+}
+.app-dark .theme-toggle {
+  background-color: #303033;
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
+  color: #4ab0e7;
+}
+.app-dark .theme-toggle:hover {
+  border: 1px solid #4ab0e7;
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
 }
 
 .loading-indicator,
@@ -184,6 +91,9 @@ body {
   padding: 10px;
   padding-top: 15px;
   position: relative;
+}
+.sidebar-test {
+  background-color: red;
 }
 
 .error-page {
@@ -275,6 +185,32 @@ body {
   right: -15px;
 }
 
+.planet-data-dark {
+  background: none;
+  box-shadow: 2px 2px 40px rgb(35, 35, 35);
+  background-color: #161616;
+}
+.planet-data-dark h1 {
+  background: none;
+  background-color: #303033;
+  color: #da1e76;
+}
+.planet-data-dark .planet-data-descriptor {
+  background-color: #303033;
+  color: white;
+}
+.planet-data-dark .planet-data-descriptor span {
+  color: #4ab0e7;
+}
+.planet-data-dark .details-close-button {
+  background-color: #303033;
+  border: 3px solid #da1e76;
+  color: #da1e76;
+}
+.planet-data-dark .details-close-button:hover {
+  box-shadow: none;
+}
+
 .button {
   width: 20%;
   border: none;
@@ -364,6 +300,23 @@ body {
 }
 .search-section .search-wrapper .button {
   width: 30%;
+}
+
+.search-section-dark .search-wrapper {
+  background: #202021;
+  box-shadow: none;
+}
+.search-section-dark .search-wrapper .button {
+  background-color: #303033;
+  border-left: 6px solid #da1e76;
+  border-right: 6px solid #da1e76;
+  color: #da1e76;
+  font-weight: 400;
+}
+.search-section-dark .search-wrapper .button:hover {
+  border: 1px solid #da1e76;
+  border-left: 6px solid #da1e76;
+  border-right: 6px solid #da1e76;
 }
 
 .search-items-section {
@@ -461,8 +414,46 @@ body {
   font-weight: 500;
 }
 
+.search-items-wrapper-dark .search-item {
+  background-color: #303033 !important;
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
+  color: #4ab0e7 !important;
+}
+.search-items-wrapper-dark .search-item h2 {
+  font-weight: 500;
+}
+.search-items-wrapper-dark .search-item:hover {
+  box-shadow: none !important;
+  background-color: #303033;
+  border: 1px solid #4ab0e7;
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
+  color: #4ab0e7;
+}
+.search-items-wrapper-dark .search-item:hover .search-item-image {
+  background-image: url(/src/assets/images/planete-icon-blue.svg) !important;
+}
+.search-items-wrapper-dark .search-item-image {
+  background-image: url(/src/assets/images/planete-icon-blue.svg) !important;
+}
+.search-items-wrapper-dark .no-results-indicator {
+  color: #4ab0e7;
+  font-weight: 400;
+}
+
+.pagination-wrapper-dark .pagination-item {
+  background-color: #303033;
+  border: 2px solid #da1e76;
+  color: #da1e76;
+  font-weight: 400;
+}
+.pagination-wrapper-dark .pagination-item:hover {
+  background-color: #303033;
+}
+
 .flyout-wrapper {
-  width: 35%;
+  width: 32%;
   display: flex;
   flex-direction: column;
   padding: 8px;
@@ -499,4 +490,40 @@ body {
 
 .flyout-hidden {
   bottom: -100px;
+}
+
+.flyout-wrapper-dark {
+  background: none;
+  box-shadow: none;
+  border: none;
+  background-color: #202021;
+}
+.flyout-wrapper-dark p {
+  color: white;
+  font-weight: 400 !important;
+}
+.flyout-wrapper-dark .button {
+  background-color: #303033 !important;
+  font-weight: 400;
+}
+.flyout-wrapper-dark .flyout-unselect-all-button {
+  background-color: #303033;
+  border-left: 6px solid #da1e76;
+  border-right: 6px solid #da1e76;
+  color: #da1e76;
+}
+.flyout-wrapper-dark .flyout-unselect-all-button:hover {
+  border: 1px solid #da1e76;
+  border-left: 6px solid #da1e76;
+  border-right: 6px solid #da1e76;
+}
+.flyout-wrapper-dark .flyout-download-button {
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
+  color: #4ab0e7;
+}
+.flyout-wrapper-dark .flyout-download-button:hover {
+  border: 1px solid #4ab0e7;
+  border-left: 6px solid #4ab0e7;
+  border-right: 6px solid #4ab0e7;
 } /*# sourceMappingURL=main.css.map */

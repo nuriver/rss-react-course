@@ -17,131 +17,23 @@ body {
 .app {
   position: relative;
   display: flex;
+  .theme-toggle {
+    margin-right: 30px;
+    margin-top: 20px;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px 8px 5px 8px;
+    text-wrap: nowrap;
+  }
 }
 
-.star-wars-theme {
+.app-dark {
   background-image: url(/src/assets/images/a7588dae699a1d5342d585c901bbf36d.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px;
-  .flyout-wrapper {
-    background: none;
-    box-shadow: none;
-    border: none;
-  }
   .sidebar {
     background-color: $main-background;
-    .search-section {
-      .search-wrapper {
-        background: $pad-background;
-        box-shadow: none;
-        .button {
-          background-color: $item-background;
-          border-left: 6px solid $button-border;
-          border-right: 6px solid $button-border;
-          color: $button-border;
-          font-weight: 400;
-          &:hover {
-            border: 1px solid $button-border;
-            border-left: 6px solid $button-border;
-            border-right: 6px solid $button-border;
-          }
-        }
-      }
-    }
-    .search-items-wrapper {
-      .search-item {
-        background-color: $item-background;
-        border-left: 6px solid $item-border;
-        border-right: 6px solid $item-border;
-        color: $item-border;
-        h2 {
-          font-weight: 500;
-        }
-        &:hover {
-          box-shadow: none !important;
-          background-color: $item-background;
-          border: 1px solid $item-border;
-          border-left: 6px solid $item-border;
-          border-right: 6px solid $item-border;
-          color: $item-border;
-          .search-item-image {
-            background-image: url(/src/assets/images/planete-icon-blue.svg);
-          }
-        }
-        &-image {
-          background-image: url(/src/assets/images/planete-icon-blue.svg);
-        }
-      }
-    }
-    .pagination-item {
-      background-color: $item-background;
-      border: 2px solid $button-border;
-      color: $button-border;
-      font-weight: 400;
-      &:hover {
-        background-color: $item-background;
-      }
-    }
-  }
-  .flyout-wrapper {
-    background-color: $pad-background;
-    p {
-      color: white;
-      font-weight: 400;
-    }
-    .button {
-      background-color: $item-background !important;
-      font-weight: 400;
-    }
-    .flyout-unselect-all-button {
-      background-color: $item-background;
-      border-left: 6px solid $button-border;
-      border-right: 6px solid $button-border;
-      color: $button-border;
-      &:hover {
-        border: 1px solid $button-border;
-        border-left: 6px solid $button-border;
-        border-right: 6px solid $button-border;
-      }
-    }
-    .flyout-download-button {
-      border-left: 6px solid $item-border;
-      border-right: 6px solid $item-border;
-      color: $item-border;
-      &:hover {
-        border: 1px solid $item-border;
-        border-left: 6px solid $item-border;
-        border-right: 6px solid $item-border;
-      }
-    }
-  }
-  .details {
-    .planet-data {
-      background: none;
-      box-shadow: 2px 2px 40px rgb(35, 35, 35);
-      background-color: $main-background;
-      h1 {
-        background: none;
-        background-color: $item-background;
-        color: $button-border;
-      }
-      .planet-data-descriptor {
-        background-color: $item-background;
-        color: white;
-        span {
-          color: $item-border;
-        }
-      }
-      .details-close-button {
-        background-color: $item-background;
-        border: 3px solid $button-border;
-        color: $button-border;
-        &:hover {
-          box-shadow: none;
-        }
-      }
-    }
   }
   .loading-indicator {
     background: none;
@@ -149,6 +41,17 @@ body {
     box-shadow: none;
     border: 2px solid $item-border;
     font-weight: 400;
+  }
+  .theme-toggle {
+    background-color: $item-background;
+    border-left: 6px solid $item-border;
+    border-right: 6px solid $item-border;
+    color: $item-border;
+    &:hover {
+      border: 1px solid $item-border;
+      border-left: 6px solid $item-border;
+      border-right: 6px solid $item-border;
+    }
   }
 }
 
@@ -187,6 +90,9 @@ body {
   padding: 10px;
   padding-top: 15px;
   position: relative;
+  &-test {
+    background-color: red;
+  }
 }
 
 .error-page {

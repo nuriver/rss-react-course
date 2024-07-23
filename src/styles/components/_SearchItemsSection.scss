@@ -89,3 +89,44 @@
   font-size: 20px;
   font-weight: 500;
 }
+
+.search-items-wrapper-dark {
+  .search-item {
+    background-color: $item-background !important;
+    border-left: 6px solid $item-border;
+    border-right: 6px solid $item-border;
+    color: $item-border !important;
+    h2 {
+      font-weight: 500;
+    }
+    &:hover {
+      box-shadow: none !important;
+      background-color: $item-background;
+      border: 1px solid $item-border;
+      border-left: 6px solid $item-border;
+      border-right: 6px solid $item-border;
+      color: $item-border;
+      .search-item-image {
+        background-image: url(/src/assets/images/planete-icon-blue.svg) !important;
+      }
+    }
+    &-image {
+      background-image: url(/src/assets/images/planete-icon-blue.svg) !important;
+    }
+  }
+  .no-results-indicator {
+    color: $item-border;
+    font-weight: 400;
+  }
+}
+.pagination-wrapper-dark {
+  .pagination-item {
+    background-color: $item-background;
+    border: 2px solid $button-border;
+    color: $button-border;
+    font-weight: 400;
+    &:hover {
+      background-color: $item-background;
+    }
+  }
+}

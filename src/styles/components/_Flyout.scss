@@ -1,5 +1,5 @@
 .flyout-wrapper {
-  width: 35%;
+  width: 32%;
   display: flex;
   flex-direction: column;
   padding: 8px;
@@ -36,4 +36,40 @@
 
 .flyout-hidden {
   bottom: -100px;
+}
+
+.flyout-wrapper-dark {
+  background: none;
+  box-shadow: none;
+  border: none;
+  background-color: $pad-background;
+  p {
+    color: white;
+    font-weight: 400 !important;
+  }
+  .button {
+    background-color: $item-background !important;
+    font-weight: 400;
+  }
+  .flyout-unselect-all-button {
+    background-color: $item-background;
+    border-left: 6px solid $button-border;
+    border-right: 6px solid $button-border;
+    color: $button-border;
+    &:hover {
+      border: 1px solid $button-border;
+      border-left: 6px solid $button-border;
+      border-right: 6px solid $button-border;
+    }
+  }
+  .flyout-download-button {
+    border-left: 6px solid $item-border;
+    border-right: 6px solid $item-border;
+    color: $item-border;
+    &:hover {
+      border: 1px solid $item-border;
+      border-left: 6px solid $item-border;
+      border-right: 6px solid $item-border;
+    }
+  }
 }

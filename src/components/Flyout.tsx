@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { CSVLink } from 'react-csv';
 import { RootState } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 export default function Flyout(): JSX.Element {
   const dispatch = useDispatch();
@@ -11,10 +13,15 @@ export default function Flyout(): JSX.Element {
   const showFlyout = useSelector(
     (state: RootState) => state.selection.showFlyout
   );
+  const theme = useContext(ThemeContext);
+  const currentClassName =
+    theme === 'light' ? 'flyout-wrapper' : 'flyout-wrapper flyout-wrapper-dark';
 
   return (
     <div
-      className={showFlyout ? 'flyout-wrapper' : 'flyout-wrapper flyout-hidden'}
+      className={
+        showFlyout ? currentClassName : `${currentClassName} flyout-hidden`
+      }
     >
       <p className="flyout-count">SELECTED ITEMS: {selectedItems.length}</p>
       <div className="flyout-buttons-container">
