@@ -6,7 +6,9 @@ import ErrorPage from './components/ErrorPage';
 import PlanetData from './components/PlanetData';
 import App from './App';
 import { Provider } from 'react-redux';
-import { store } from './store/store';
+import { setupStore } from './store/store';
+
+const store = setupStore();
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

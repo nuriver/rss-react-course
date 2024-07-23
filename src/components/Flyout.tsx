@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { CSVLink } from 'react-csv';
-import { RootState } from '../store/store';
+import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
 
 export default function Flyout(): JSX.Element {
-  const dispatch = useDispatch();
-  const selectedItems = useSelector(
+  const dispatch = useAppDispatch();
+  const selectedItems = useAppSelector(
     (state: RootState) => state.selection.selectedItems
   );
   const showFlyout = useSelector(
