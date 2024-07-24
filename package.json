@@ -44,7 +44,6 @@
     "lint-staged": "^12.4.1",
     "msw": "^2.3.4",
     "prettier": "^2.6.2",
-    "react-csv": "^2.2.2",
     "sass": "^1.77.6",
     "typescript": "^5.5.2",
     "vite": "^5.3.1",

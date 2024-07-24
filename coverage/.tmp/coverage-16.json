@@ -1,1 +1,67 @@
-{"result":[{"scriptId":"1006","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/setup.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1628,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1628,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":794,"endOffset":838,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1385","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/components/LoadingIndicator.test.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2078,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2078,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":644,"endOffset":1040,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1389","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/LoadingIndicator.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1757,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1757,"count":1}],"isBlockCoverage":true},{"functionName":"LoadingIndicator","ranges":[{"startOffset":315,"endOffset":897,"count":1}],"isBlockCoverage":true}]}]}
+{
+  "result": [
+    {
+      "scriptId": "1006",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/setup.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 794, "endOffset": 838, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1385",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/components/LoadingIndicator.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2078, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2078, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 644, "endOffset": 1040, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1389",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/LoadingIndicator.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "LoadingIndicator",
+          "ranges": [{ "startOffset": 315, "endOffset": 897, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,1 +1,477 @@
-{"result":[{"scriptId":"1007","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/setup.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1628,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1628,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":794,"endOffset":838,"count":5}],"isBlockCoverage":true}]},{"scriptId":"1385","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/components/SearchSection.test.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":18531,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":18531,"count":1},{"startOffset":227,"endOffset":270,"count":0},{"startOffset":272,"endOffset":560,"count":0}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1229,"endOffset":9893,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1330,"endOffset":1464,"count":5}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1510,"endOffset":3074,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":3141,"endOffset":4698,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":4769,"endOffset":6493,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":6550,"endOffset":8182,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":8238,"endOffset":9889,"count":1}],"isBlockCoverage":true}]},{"scriptId":"1389","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/__mocks__/react-router-dom.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2536,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2536,"count":1}],"isBlockCoverage":true},{"functionName":"get","ranges":[{"startOffset":613,"endOffset":642,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":792,"endOffset":817,"count":0}],"isBlockCoverage":false},{"functionName":"","ranges":[{"startOffset":926,"endOffset":949,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1051,"endOffset":1078,"count":24}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1191,"endOffset":1216,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1320,"endOffset":1349,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1449","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchSection.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":6737,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":6737,"count":1}],"isBlockCoverage":true},{"functionName":"SearchSection","ranges":[{"startOffset":712,"endOffset":2972,"count":19},{"startOffset":1517,"endOffset":1535,"count":17},{"startOffset":1536,"endOffset":1574,"count":2}],"isBlockCoverage":true},{"functionName":"searchClickHandler","ranges":[{"startOffset":974,"endOffset":1093,"count":2}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":1129,"endOffset":1259,"count":5}],"isBlockCoverage":true},{"functionName":"inputHandler","ranges":[{"startOffset":1289,"endOffset":1408,"count":9}],"isBlockCoverage":true}]},{"scriptId":"1451","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/App.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":10256,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":10256,"count":1}],"isBlockCoverage":true},{"functionName":"get","ranges":[{"startOffset":1478,"endOffset":1506,"count":21}],"isBlockCoverage":true},{"functionName":"App","ranges":[{"startOffset":1510,"endOffset":5333,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1452","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/ErrorBoundary.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3894,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3894,"count":1}],"isBlockCoverage":true},{"functionName":"ErrorBoundary","ranges":[{"startOffset":508,"endOffset":760,"count":0}],"isBlockCoverage":false},{"functionName":"getDerivedStateFromError","ranges":[{"startOffset":770,"endOffset":833,"count":0}],"isBlockCoverage":false},{"functionName":"componentDidCatch","ranges":[{"startOffset":836,"endOffset":904,"count":0}],"isBlockCoverage":false},{"functionName":"render","ranges":[{"startOffset":907,"endOffset":1358,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1453","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItemsWrapper.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":7260,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":7260,"count":1}],"isBlockCoverage":true},{"functionName":"SearchItemsWrapper","ranges":[{"startOffset":1382,"endOffset":3658,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1454","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/api/apiSlice.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2457,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2457,"count":1}],"isBlockCoverage":true},{"functionName":"endpoints","ranges":[{"startOffset":546,"endOffset":773,"count":1}],"isBlockCoverage":true},{"functionName":"query","ranges":[{"startOffset":607,"endOffset":672,"count":0}],"isBlockCoverage":false},{"functionName":"query","ranges":[{"startOffset":725,"endOffset":761,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":874,"endOffset":898,"count":4}],"isBlockCoverage":true}]},{"scriptId":"1466","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Pagination.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":3041,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":3041,"count":1}],"isBlockCoverage":true},{"functionName":"Pagination","ranges":[{"startOffset":677,"endOffset":1327,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1467","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/utilities/createPagination.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":2529,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":2529,"count":1}],"isBlockCoverage":true},{"functionName":"createPagination","ranges":[{"startOffset":448,"endOffset":1033,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1468","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/LoadingIndicator.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":1757,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":1757,"count":1}],"isBlockCoverage":true},{"functionName":"LoadingIndicator","ranges":[{"startOffset":315,"endOffset":897,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1469","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItems.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":9121,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":9121,"count":1}],"isBlockCoverage":true},{"functionName":"SearchItems","ranges":[{"startOffset":757,"endOffset":3930,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1470","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/selection/selectionSlice.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":4134,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":4134,"count":1}],"isBlockCoverage":true},{"functionName":"selectItem","ranges":[{"startOffset":535,"endOffset":640,"count":0}],"isBlockCoverage":false},{"functionName":"unselectItem","ranges":[{"startOffset":660,"endOffset":886,"count":0}],"isBlockCoverage":false},{"functionName":"unselectAllItems","ranges":[{"startOffset":910,"endOffset":992,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1103,"endOffset":1133,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1369,"endOffset":1395,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1499,"endOffset":1527,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1635,"endOffset":1667,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1471","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Flyout.tsx","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":7539,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":7539,"count":1}],"isBlockCoverage":true},{"functionName":"Flyout","ranges":[{"startOffset":1096,"endOffset":3849,"count":0}],"isBlockCoverage":false}]},{"scriptId":"1487","url":"file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/store/store.ts","functions":[{"functionName":"","ranges":[{"startOffset":0,"endOffset":4198,"count":1}],"isBlockCoverage":true},{"functionName":"","ranges":[{"startOffset":13,"endOffset":4198,"count":1}],"isBlockCoverage":true},{"functionName":"setupStore","ranges":[{"startOffset":991,"endOffset":1229,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1329,"endOffset":1355,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1531,"endOffset":1561,"count":0}],"isBlockCoverage":false},{"functionName":"get","ranges":[{"startOffset":1737,"endOffset":1767,"count":0}],"isBlockCoverage":false}]}]}
+{
+  "result": [
+    {
+      "scriptId": "1007",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/setup.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 794, "endOffset": 838, "count": 5 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1385",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/components/SearchSection.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 18531, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            { "startOffset": 13, "endOffset": 18531, "count": 1 },
+            { "startOffset": 227, "endOffset": 270, "count": 0 },
+            { "startOffset": 272, "endOffset": 560, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1229, "endOffset": 9893, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1330, "endOffset": 1464, "count": 5 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1510, "endOffset": 3074, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 3141, "endOffset": 4698, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 4769, "endOffset": 6493, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 6550, "endOffset": 8182, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 8238, "endOffset": 9889, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1389",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/__mocks__/react-router-dom.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2536, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2536, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 613, "endOffset": 642, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 792, "endOffset": 817, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 926, "endOffset": 949, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1051, "endOffset": 1078, "count": 24 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1191, "endOffset": 1216, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1320, "endOffset": 1349, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1449",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchSection.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 6737, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 6737, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchSection",
+          "ranges": [
+            { "startOffset": 712, "endOffset": 2972, "count": 19 },
+            { "startOffset": 1517, "endOffset": 1535, "count": 17 },
+            { "startOffset": 1536, "endOffset": 1574, "count": 2 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "searchClickHandler",
+          "ranges": [{ "startOffset": 974, "endOffset": 1093, "count": 2 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1129, "endOffset": 1259, "count": 5 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "inputHandler",
+          "ranges": [{ "startOffset": 1289, "endOffset": 1408, "count": 9 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1451",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/App.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 10256, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 10256, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1478, "endOffset": 1506, "count": 21 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "App",
+          "ranges": [{ "startOffset": 1510, "endOffset": 5333, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1452",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/ErrorBoundary.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3894, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3894, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "ErrorBoundary",
+          "ranges": [{ "startOffset": 508, "endOffset": 760, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getDerivedStateFromError",
+          "ranges": [{ "startOffset": 770, "endOffset": 833, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "componentDidCatch",
+          "ranges": [{ "startOffset": 836, "endOffset": 904, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "render",
+          "ranges": [{ "startOffset": 907, "endOffset": 1358, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1453",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItemsWrapper.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7260, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7260, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchItemsWrapper",
+          "ranges": [{ "startOffset": 1382, "endOffset": 3658, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1454",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/api/apiSlice.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2457, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2457, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "endpoints",
+          "ranges": [{ "startOffset": 546, "endOffset": 773, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 607, "endOffset": 672, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 725, "endOffset": 761, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 874, "endOffset": 898, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1466",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Pagination.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3041, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3041, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Pagination",
+          "ranges": [{ "startOffset": 677, "endOffset": 1327, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1467",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/utilities/createPagination.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2529, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2529, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createPagination",
+          "ranges": [{ "startOffset": 448, "endOffset": 1033, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1468",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/LoadingIndicator.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "LoadingIndicator",
+          "ranges": [{ "startOffset": 315, "endOffset": 897, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1469",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItems.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 9121, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 9121, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchItems",
+          "ranges": [{ "startOffset": 757, "endOffset": 3930, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1470",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/selection/selectionSlice.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4134, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4134, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "selectItem",
+          "ranges": [{ "startOffset": 535, "endOffset": 640, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "unselectItem",
+          "ranges": [{ "startOffset": 660, "endOffset": 886, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "unselectAllItems",
+          "ranges": [{ "startOffset": 910, "endOffset": 992, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1103, "endOffset": 1133, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1369, "endOffset": 1395, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1499, "endOffset": 1527, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1635, "endOffset": 1667, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1471",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Flyout.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7539, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7539, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Flyout",
+          "ranges": [{ "startOffset": 1096, "endOffset": 3849, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1487",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/store/store.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4198, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4198, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "setupStore",
+          "ranges": [{ "startOffset": 991, "endOffset": 1229, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1329, "endOffset": 1355, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1531, "endOffset": 1561, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1737, "endOffset": 1767, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ]
+}

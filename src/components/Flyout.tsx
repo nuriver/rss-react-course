@@ -1,9 +1,9 @@
 import { useSelector } from 'react-redux';
-import { CSVLink } from 'react-csv';
 import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { useContext } from 'react';
 import { ThemeContext } from '../App';
+import { Planet } from '../types/types';
 
 export default function Flyout(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -16,6 +16,26 @@ export default function Flyout(): JSX.Element {
   const theme = useContext(ThemeContext);
   const currentClassName =
     theme === 'light' ? 'flyout-wrapper' : 'flyout-wrapper flyout-wrapper-dark';
+
+  const convertToCSV = (array: Planet[]): string => {
+    if (array.length === 0) return '';
+
+    const headers = Object.keys(array[0]) as Array<keyof Planet>;
+
+    const replacer = (key: string, value: string | number | string[]) =>
+      value === null ? '' : value;
+
+    const rows = array.map((row) =>
+      headers
+        .map((fieldName) => JSON.stringify(row[fieldName], replacer))
+        .join(',')
+    );
+
+    return [headers.join(','), ...rows].join('\r\n');
+  };
+
+  const csvData = convertToCSV(selectedItems);
+  const csvBlob = `data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`;
 
   return (
     <div
@@ -31,14 +51,13 @@ export default function Flyout(): JSX.Element {
         >
           UNSELECT ALL
         </button>
-        <CSVLink
+        <a
           className="button flyout-download-button"
-          data={selectedItems}
-          filename={`${selectedItems.length}_planets.csv`}
-          target="_blank"
+          href={csvBlob}
+          download={`${selectedItems.length}_planets.csv`}
         >
           DOWNLOAD
-        </CSVLink>
+        </a>
       </div>
     </div>
   );
