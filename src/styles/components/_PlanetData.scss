@@ -54,9 +54,9 @@
 }
 
 .planet-data.planet-data-dark {
-  background: none;
-  box-shadow: 2px 2px 40px rgb(35, 35, 35);
-  background-color: $main-background;
+  background: none !important;
+  box-shadow: 2px 2px 40px rgb(35, 35, 35) !important;
+  background-color: $main-background !important;
   h1 {
     background: none;
     background-color: $item-background;

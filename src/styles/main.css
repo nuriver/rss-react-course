@@ -92,9 +92,6 @@ body {
   padding-top: 15px;
   position: relative;
 }
-.sidebar-test {
-  background-color: red;
-}
 
 .error-page {
   width: 500px;
@@ -186,9 +183,9 @@ body {
 }
 
 .planet-data.planet-data-dark {
-  background: none;
-  box-shadow: 2px 2px 40px rgb(35, 35, 35);
-  background-color: #161616;
+  background: none !important;
+  box-shadow: 2px 2px 40px rgb(35, 35, 35) !important;
+  background-color: #161616 !important;
 }
 .planet-data.planet-data-dark h1 {
   background: none;

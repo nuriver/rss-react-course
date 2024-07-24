@@ -5,7 +5,6 @@ import { screen, waitFor } from '@testing-library/react';
 import { setupServer } from 'msw/node';
 import createHandlers from '../createHandlers';
 import { planets } from '../testData';
-import SearchItems from '../../src/components/SearchItems';
 import { ThemeContext } from '../../src/App';
 
 const mockResponse = planets;

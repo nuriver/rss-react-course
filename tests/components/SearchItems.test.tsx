@@ -5,7 +5,6 @@ import { screen } from '@testing-library/react';
 import { planets } from '../testData';
 import { BrowserRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import { act } from 'react';
 
 const user = userEvent.setup();
 
