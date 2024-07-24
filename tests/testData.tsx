@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { Planet } from '../src/types/types';
-import createItems from '../src/components/SearchItems';
 
 export const defaultPlanet1: Planet = {
   name: 'Alderaan',
@@ -65,6 +64,18 @@ export const defaultPlanet3: Planet = {
   url: 'https://swapi.dev/api/planets/3/',
 };
 
+export const detailsMockResponseValues = [
+  'Alderaan',
+  '24',
+  '364',
+  '12500',
+  'temperate',
+  '1 standard',
+  'grasslands, mountains',
+  '40',
+  '2000000000',
+];
+
 export const planets = [defaultPlanet1, defaultPlanet2, defaultPlanet3];
 
 export const goodMockResponse = new Response(JSON.stringify(defaultPlanet1), {
@@ -126,5 +137,17 @@ export const planetLinks = [
 export const mockPages = [
   <Link className="pagination-item" key={1} to={`/search/1`}>
     {1}
+  </Link>,
+];
+
+export const pagination = [
+  <Link className="pagination-item" key={1} to="/search/1">
+    1
+  </Link>,
+  <Link className="pagination-item" key={2} to="/search/2">
+    2
+  </Link>,
+  <Link className="pagination-item" key={3} to="/search/3">
+    3
   </Link>,
 ];

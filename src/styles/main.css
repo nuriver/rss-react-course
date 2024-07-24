@@ -185,29 +185,29 @@ body {
   right: -15px;
 }
 
-.planet-data-dark {
+.planet-data.planet-data-dark {
   background: none;
   box-shadow: 2px 2px 40px rgb(35, 35, 35);
   background-color: #161616;
 }
-.planet-data-dark h1 {
+.planet-data.planet-data-dark h1 {
   background: none;
   background-color: #303033;
   color: #da1e76;
 }
-.planet-data-dark .planet-data-descriptor {
+.planet-data.planet-data-dark .planet-data-descriptor {
   background-color: #303033;
   color: white;
 }
-.planet-data-dark .planet-data-descriptor span {
+.planet-data.planet-data-dark .planet-data-descriptor span {
   color: #4ab0e7;
 }
-.planet-data-dark .details-close-button {
+.planet-data.planet-data-dark .details-close-button {
   background-color: #303033;
   border: 3px solid #da1e76;
   color: #da1e76;
 }
-.planet-data-dark .details-close-button:hover {
+.planet-data.planet-data-dark .details-close-button:hover {
   box-shadow: none;
 }
 

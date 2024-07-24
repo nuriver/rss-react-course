@@ -1,3 +1,6 @@
+import { RenderOptions } from '@testing-library/react';
+import { AppStore, RootState } from '../store/store';
+
 export interface Planet {
   name: string;
   rotation_period: string;
@@ -40,4 +43,9 @@ export interface PlanetsQuery {
 export interface SelectionState {
   selectedItems: Planet[];
   showFlyout: boolean;
+}
+
+export interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
+  preloadedState?: Partial<RootState>;
+  store?: AppStore;
 }

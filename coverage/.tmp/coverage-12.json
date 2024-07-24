@@ -1,0 +1,615 @@
+{
+  "result": [
+    {
+      "scriptId": "1007",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/setup.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1628, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 794, "endOffset": 838, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1385",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/components/PlanetDetails.test.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 10914, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [
+            { "startOffset": 13, "endOffset": 10914, "count": 1 },
+            { "startOffset": 227, "endOffset": 270, "count": 0 },
+            { "startOffset": 272, "endOffset": 560, "count": 0 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1440, "endOffset": 5672, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1493, "endOffset": 1578, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1623, "endOffset": 2456, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 2357, "endOffset": 2450, "count": 9 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 2514, "endOffset": 3366, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 3430, "endOffset": 4509, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 4572, "endOffset": 5668, "count": 1 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1389",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/__mocks__/react-router-dom.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2536, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2536, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 613, "endOffset": 642, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 792, "endOffset": 817, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 926, "endOffset": 949, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1051, "endOffset": 1078, "count": 8 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 1191, "endOffset": 1216, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1320, "endOffset": 1349, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1449",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/PlanetData.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 15660, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 15660, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "PlanetData",
+          "ranges": [{ "startOffset": 1015, "endOffset": 1946, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "PlanetDetails",
+          "ranges": [
+            { "startOffset": 1947, "endOffset": 8764, "count": 4 },
+            { "startOffset": 2326, "endOffset": 2341, "count": 3 },
+            { "startOffset": 2342, "endOffset": 2374, "count": 1 }
+          ],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "closeButtonHandler",
+          "ranges": [{ "startOffset": 2140, "endOffset": 2218, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "onClick",
+          "ranges": [{ "startOffset": 8182, "endOffset": 8245, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 8866, "endOffset": 8895, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1450",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/api/apiSlice.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2457, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2457, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "endpoints",
+          "ranges": [{ "startOffset": 546, "endOffset": 773, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 607, "endOffset": 672, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "query",
+          "ranges": [{ "startOffset": 725, "endOffset": 761, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 874, "endOffset": 898, "count": 9 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1463",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/LoadingIndicator.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 1757, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "LoadingIndicator",
+          "ranges": [{ "startOffset": 315, "endOffset": 897, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1464",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/App.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 10256, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 10256, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1478, "endOffset": 1506, "count": 6 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "App",
+          "ranges": [{ "startOffset": 1510, "endOffset": 5333, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1465",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchSection.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 6737, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 6737, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchSection",
+          "ranges": [{ "startOffset": 712, "endOffset": 2972, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1466",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/ErrorBoundary.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3894, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3894, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "ErrorBoundary",
+          "ranges": [{ "startOffset": 508, "endOffset": 760, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "getDerivedStateFromError",
+          "ranges": [{ "startOffset": 770, "endOffset": 833, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "componentDidCatch",
+          "ranges": [{ "startOffset": 836, "endOffset": 904, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "render",
+          "ranges": [{ "startOffset": 907, "endOffset": 1358, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1467",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItemsWrapper.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7260, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7260, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchItemsWrapper",
+          "ranges": [{ "startOffset": 1382, "endOffset": 3658, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1468",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Pagination.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3041, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3041, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Pagination",
+          "ranges": [{ "startOffset": 677, "endOffset": 1327, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1469",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/utilities/createPagination.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 2529, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 2529, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "createPagination",
+          "ranges": [{ "startOffset": 448, "endOffset": 1033, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1470",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/SearchItems.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 9121, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 9121, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "SearchItems",
+          "ranges": [{ "startOffset": 757, "endOffset": 3930, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1471",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/features/selection/selectionSlice.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4134, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4134, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "selectItem",
+          "ranges": [{ "startOffset": 535, "endOffset": 640, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "unselectItem",
+          "ranges": [{ "startOffset": 660, "endOffset": 886, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "unselectAllItems",
+          "ranges": [{ "startOffset": 910, "endOffset": 992, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1103, "endOffset": 1133, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1369, "endOffset": 1395, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1499, "endOffset": 1527, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1635, "endOffset": 1667, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1472",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/components/Flyout.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 7539, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 7539, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Flyout",
+          "ranges": [{ "startOffset": 1096, "endOffset": 3849, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1488",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/src/store/store.ts",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 4198, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 4198, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "setupStore",
+          "ranges": [{ "startOffset": 991, "endOffset": 1229, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "middleware",
+          "ranges": [{ "startOffset": 1103, "endOffset": 1201, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1329, "endOffset": 1355, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1531, "endOffset": 1561, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1737, "endOffset": 1767, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    },
+    {
+      "scriptId": "1489",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/customRender.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 3344, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 3344, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "renderWithProviders",
+          "ranges": [{ "startOffset": 712, "endOffset": 1342, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "Wrapper",
+          "ranges": [{ "startOffset": 940, "endOffset": 1232, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1450, "endOffset": 1485, "count": 4 }],
+          "isBlockCoverage": true
+        }
+      ]
+    },
+    {
+      "scriptId": "1490",
+      "url": "file:///C:/Users/Asus/Documents/DEV/VScode/RS_SCHOOL/rss-react-course/tests/testData.tsx",
+      "functions": [
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 0, "endOffset": 19020, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "",
+          "ranges": [{ "startOffset": 13, "endOffset": 19020, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1147, "endOffset": 1177, "count": 4 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 1881, "endOffset": 1911, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 2615, "endOffset": 2645, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 2924, "endOffset": 2965, "count": 1 }],
+          "isBlockCoverage": true
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 3130, "endOffset": 3153, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 3441, "endOffset": 3473, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 3696, "endOffset": 3727, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 3997, "endOffset": 4021, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 4309, "endOffset": 4344, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 7729, "endOffset": 7756, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 8181, "endOffset": 8206, "count": 0 }],
+          "isBlockCoverage": false
+        },
+        {
+          "functionName": "get",
+          "ranges": [{ "startOffset": 9243, "endOffset": 9269, "count": 0 }],
+          "isBlockCoverage": false
+        }
+      ]
+    }
+  ]
+}

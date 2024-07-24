@@ -2,6 +2,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { apiSlice } from '../features/api/apiSlice';
 import { Planet } from '../types/types';
 import LoadingIndicator from './LoadingIndicator';
+import { ThemeContext } from '../App';
+import { useContext } from 'react';
 
 const { useGetPlanetQuery } = apiSlice;
 
@@ -17,7 +19,7 @@ export default function PlanetData(): JSX.Element | null {
     isFetching,
     isSuccess,
     isError,
-  } = useGetPlanetQuery(planetId, { skip: false });
+  } = useGetPlanetQuery(planetId);
 
   if (isFetching) {
     return <LoadingIndicator />;
@@ -34,7 +36,7 @@ export default function PlanetData(): JSX.Element | null {
   return null;
 }
 
-function PlanetDetails({
+export function PlanetDetails({
   planet,
   pageId,
 }: {
@@ -42,13 +44,18 @@ function PlanetDetails({
   pageId: string;
 }): JSX.Element {
   const navigate = useNavigate();
+  const theme = useContext(ThemeContext);
 
   function closeButtonHandler(pageId: string): void {
     navigate(`/search/${pageId}`);
   }
 
   return (
-    <div className="planet-data">
+    <div
+      className={
+        theme === 'light' ? 'planet-data' : 'planet-data planet-data-dark'
+      }
+    >
       <h1>{planet.name}</h1>
       <p className="planet-data-descriptor">
         <span>rotation_period:</span> {planet.rotation_period}
