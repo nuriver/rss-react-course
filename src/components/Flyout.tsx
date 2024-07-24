@@ -22,7 +22,7 @@ export default function Flyout(): JSX.Element {
 
     const headers = Object.keys(array[0]) as Array<keyof Planet>;
 
-    const replacer = (key: string, value: string | number | string[]) =>
+    const replacer = (_key: string, value: string | number | string[]) =>
       value === null ? '' : value;
 
     const rows = array.map((row) =>
