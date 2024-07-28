@@ -1,0 +1,80 @@
+.details {
+  width: 100%;
+  height: 100vh;
+  padding: 40px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  .planet-data {
+    position: relative;
+    background: linear-gradient(
+      266deg,
+      rgba(26, 4, 164, 1) 0%,
+      rgb(67, 117, 253) 100%
+    );
+    border-radius: 5px;
+    padding: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 2px 2px 20px rgb(102, 102, 102);
+    .planet-data-descriptor,
+    h1 {
+      padding: 8px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 5px;
+      padding-left: 15px;
+      span {
+        font-weight: 700;
+      }
+    }
+    .planet-data-descriptor {
+      font-size: 20px;
+    }
+    h1 {
+      font-size: 30px;
+      background: linear-gradient(
+        90deg,
+        rgba(26, 4, 164, 1) 0%,
+        rgb(67, 117, 253) 100%
+      );
+      color: white;
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .details-close-button {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+  }
+}
+
+.planet-data.planet-data-dark {
+  background: none !important;
+  box-shadow: 2px 2px 40px rgb(35, 35, 35) !important;
+  background-color: $main-background !important;
+  h1 {
+    background: none;
+    background-color: $item-background;
+    color: $button-border;
+  }
+  .planet-data-descriptor {
+    background-color: $item-background;
+    color: white;
+    span {
+      color: $item-border;
+    }
+  }
+  .details-close-button {
+    background-color: $item-background;
+    border: 3px solid $button-border;
+    color: $button-border;
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
