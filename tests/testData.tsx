@@ -99,6 +99,36 @@ export const mockData = {
   results: [defaultPlanet1, defaultPlanet2, defaultPlanet3],
 };
 
+export const mockDataPaginationTrue = {
+  count: 26,
+  results: [
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+    defaultPlanet1,
+    defaultPlanet2,
+    defaultPlanet3,
+  ],
+};
+
 export const goodPlanetsResponse = new Response(JSON.stringify(mockData), {
   status: 200,
   statusText: 'OK',
