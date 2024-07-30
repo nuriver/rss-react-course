@@ -24,3 +24,8 @@ dist-ssr
 *.sw?
 
 coverage/
+
+# ...
+.next
+next-env.d.ts
+dist
