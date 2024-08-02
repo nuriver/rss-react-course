@@ -49,3 +49,8 @@ export interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<RootState>;
   store?: AppStore;
 }
+
+export interface QueryContextType {
+  search: string;
+  page: string;
+}

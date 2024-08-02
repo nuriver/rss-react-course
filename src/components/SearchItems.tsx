@@ -1,19 +1,28 @@
-import { MouseEventHandler } from 'react';
+import { MouseEventHandler, useEffect, useState } from 'react';
 import { Planet } from '../types/types';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItem, unselectItem } from '../features/selection/selectionSlice';
 import { RootState } from '../store/store';
+import Link from 'next/link';
 
 export default function SearchItems({
   planets,
+  page,
+  search,
 }: {
   planets: Planet[] | undefined;
+  page: string;
+  search: string;
 }): JSX.Element | JSX.Element[] {
   const dispatch = useDispatch();
-  const selectedItems = useSelector(
+  const itemsInStore = useSelector(
     (state: RootState) => state.selection.selectedItems
   );
+  const [selectedItems, setSelectedItems] = useState(itemsInStore);
+
+  useEffect(() => {
+    setSelectedItems(itemsInStore);
+  }, [itemsInStore]);
 
   if (planets && planets.length > 0) {
     const handleCheckboxClick: MouseEventHandler<HTMLInputElement> = (
@@ -45,7 +54,7 @@ export default function SearchItems({
       return (
         <Link
           key={planetNumber[1]}
-          to={`planets/${planetNumber[1]}`}
+          href={`/?search=${search}&page=${page}&details=${planetNumber[1]}`}
           className="search-item"
           data-name={planet.name}
         >

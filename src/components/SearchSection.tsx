@@ -1,59 +1,47 @@
-import {
-  ChangeEventHandler,
-  MouseEventHandler,
-  useContext,
-  useEffect,
-  useState,
-} from 'react';
-import { useNavigate } from 'react-router-dom';
-import { ThemeContext } from '../App';
+import { FormEventHandler, useContext } from 'react';
+import { useRouter } from 'next/navigation';
+import { ThemeContext } from '../context/ThemeContext';
 
-export default function SearchSection(): JSX.Element {
-  const [query, setQuery] = useState('');
-  const navigate = useNavigate();
+export default function SearchSection({
+  search,
+}: {
+  search: string;
+}): JSX.Element {
+  const router = useRouter();
   const theme = useContext(ThemeContext);
 
-  const searchClickHandler: MouseEventHandler<HTMLButtonElement> = (
+  const searchClickHandler: FormEventHandler<HTMLFormElement> = (
     event
   ): void => {
     event.preventDefault();
-    localStorage.setItem('searchQuery', query);
-    navigate('/search/1');
-  };
 
-  useEffect(() => {
-    const storedQuery = localStorage.getItem('searchQuery');
-    if (storedQuery) {
-      setQuery(storedQuery);
-    }
-  }, []);
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
 
-  const inputHandler: ChangeEventHandler<HTMLInputElement> = (event): void => {
-    const target = event.target as HTMLInputElement;
-    const inputValue = target.value.trim();
-    setQuery(inputValue);
+    router.push(`/?search=${data.search}&page=1`);
   };
 
   return (
     <div
       className={
-        theme === 'light'
+        theme !== 'dark'
           ? 'search-section'
           : 'search-section search-section-dark'
       }
       role="search"
     >
-      <div className="search-wrapper">
+      <form className="search-wrapper" onSubmit={searchClickHandler}>
         <input
           type="text"
+          name="search"
           className="search-input"
-          onChange={inputHandler}
-          value={query}
+          defaultValue={search}
         />
-        <button className="button search-button" onClick={searchClickHandler}>
+        <button className="button search-button" type="submit">
           SEARCH
         </button>
-      </div>
+      </form>
     </div>
   );
 }
