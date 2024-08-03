@@ -57,7 +57,7 @@ export default function App({
     <ThemeContext.Provider value={theme}>
       <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
         <div className="sidebar">
-          <SearchSection search={search} />
+          <SearchSection />
           <section className="search-items-section">
             <SearchItemsWrapper planets={planets} page={page} search={search} />
           </section>

@@ -1,14 +1,31 @@
-import { FormEventHandler, useContext } from 'react';
-import { useRouter } from 'next/navigation';
+import {
+  ChangeEventHandler,
+  FormEventHandler,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ThemeContext } from '../context/ThemeContext';
 
-export default function SearchSection({
-  search,
-}: {
-  search: string;
-}): JSX.Element {
+export default function SearchSection(): JSX.Element {
+  const searchParams = useSearchParams();
   const router = useRouter();
+  const searchValue = searchParams.get('search') as string;
   const theme = useContext(ThemeContext);
+
+  console.log(searchValue);
+
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    setValue(searchValue);
+  }, [searchValue]);
+
+  const inputChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const input = event.target as HTMLInputElement;
+    setValue(input.value);
+  };
 
   const searchClickHandler: FormEventHandler<HTMLFormElement> = (
     event
@@ -36,7 +53,8 @@ export default function SearchSection({
           type="text"
           name="search"
           className="search-input"
-          defaultValue={search}
+          value={value}
+          onChange={inputChangeHandler}
         />
         <button className="button search-button" type="submit">
           SEARCH
