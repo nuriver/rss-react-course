@@ -5,6 +5,8 @@ import { Planet, PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
 import { useState } from 'react';
+import { useLoading } from '../hooks/useLoading';
+import LoadingIndicator from '../components/LoadingIndicator';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
@@ -44,6 +46,7 @@ export default function App({
   details,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
   const [theme, setTheme] = useState('light');
+  const loading = useLoading();
 
   function themeToggleHandler(): void {
     if (theme === 'light') {
@@ -56,6 +59,7 @@ export default function App({
   return (
     <ThemeContext.Provider value={theme}>
       <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
+        {loading && <LoadingIndicator />}
         <div className="sidebar">
           <SearchSection />
           <section className="search-items-section">
