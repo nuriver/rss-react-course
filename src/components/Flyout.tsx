@@ -5,9 +5,15 @@ import { useContext } from 'react';
 import { ThemeContext } from '../App';
 import { Planet } from '../types/types';
 
-export default function Flyout(): JSX.Element {
+export default function Flyout({
+  selectedItems,
+  setSelectedItems,
+}: {
+  selectedItems: string[];
+  setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
+}): JSX.Element {
   const dispatch = useAppDispatch();
-  const selectedItems = useAppSelector(
+  const itemsInStore = useAppSelector(
     (state: RootState) => state.selection.selectedItems
   );
   const showFlyout = useSelector(
@@ -34,7 +40,7 @@ export default function Flyout(): JSX.Element {
     return [headers.join(','), ...rows].join('\r\n');
   };
 
-  const csvData = convertToCSV(selectedItems);
+  const csvData = convertToCSV(itemsInStore);
   const csvBlob = `data:text/csv;charset=utf-8,${encodeURIComponent(csvData)}`;
 
   return (
@@ -47,7 +53,10 @@ export default function Flyout(): JSX.Element {
       <div className="flyout-buttons-container">
         <button
           className="button flyout-unselect-all-button"
-          onClick={() => dispatch(unselectAllItems())}
+          onClick={() => {
+            dispatch(unselectAllItems());
+            setSelectedItems([]);
+          }}
         >
           UNSELECT ALL
         </button>

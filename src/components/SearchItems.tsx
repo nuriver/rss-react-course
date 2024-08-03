@@ -1,28 +1,23 @@
-import { MouseEventHandler, useEffect, useState } from 'react';
+import { MouseEventHandler } from 'react';
 import { Planet } from '../types/types';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectItem, unselectItem } from '../features/selection/selectionSlice';
-import { RootState } from '../store/store';
+import { useAppDispatch } from '../store/store';
 import Link from 'next/link';
 
 export default function SearchItems({
   planets,
   page,
   search,
+  selectedItems,
+  setSelectedItems,
 }: {
   planets: Planet[] | undefined;
   page: string;
   search: string;
+  selectedItems: string[];
+  setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
 }): JSX.Element | JSX.Element[] {
-  const dispatch = useDispatch();
-  const itemsInStore = useSelector(
-    (state: RootState) => state.selection.selectedItems
-  );
-  const [selectedItems, setSelectedItems] = useState(itemsInStore);
-
-  useEffect(() => {
-    setSelectedItems(itemsInStore);
-  }, [itemsInStore]);
+  const dispatch = useAppDispatch();
 
   if (planets && planets.length > 0) {
     const handleCheckboxClick: MouseEventHandler<HTMLInputElement> = (
@@ -39,9 +34,16 @@ export default function SearchItems({
 
       if (checkbox.checked) {
         dispatch(selectItem(targetPlanet));
+        setSelectedItems((prevSelectedItems) => [
+          ...prevSelectedItems,
+          targetName,
+        ]);
       }
       if (!checkbox.checked) {
         dispatch(unselectItem(targetName));
+        setSelectedItems((prevSelectedItems) =>
+          prevSelectedItems.filter((item) => item !== targetName)
+        );
       }
     };
 
@@ -49,7 +51,7 @@ export default function SearchItems({
       const planetUrl = planet.url;
       const planetNumber = planetUrl.match(/planets\/(\d+)/);
       if (!planetNumber) throw new Error('No planet number');
-      const isSelected = selectedItems.includes(planet);
+      const isSelected = selectedItems.includes(planet.name);
 
       return (
         <Link

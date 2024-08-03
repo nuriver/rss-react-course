@@ -4,12 +4,14 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
+import { useState } from 'react';
 
-export const getServerSideProps = (async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
   const search = query.search as string;
   const page = query.page as string;
   const detailsQuery = query.details;
+
   let details;
 
   if (!page) {
@@ -33,7 +35,7 @@ export const getServerSideProps = (async (context) => {
       return { props: { planets, search, page, details: null } };
     }
   }
-}) satisfies GetServerSideProps<{ planets: PlanetsResponse }>;
+};
 
 export default function App({
   planets,
@@ -41,7 +43,7 @@ export default function App({
   page,
   details,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
-  // const [theme, setTheme] = useState('light');
+  const [theme] = useState('light');
 
   return (
     <ThemeContext.Provider value={'theme'}>
