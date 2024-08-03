@@ -1,7 +1,7 @@
 import { Planet } from '../types/types';
-import { ThemeContext } from '../App';
 import { useContext } from 'react';
 import { useRouter } from 'next/router';
+import { ThemeContext } from '../context/ThemeContext';
 
 export default function PlanetData({
   details,

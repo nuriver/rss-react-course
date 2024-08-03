@@ -1,7 +1,7 @@
 import SearchSection from '../components/SearchSection';
 import { ThemeContext } from '../context/ThemeContext';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
-import { PlanetsResponse } from '../types/types';
+import { Planet, PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
 import { useState } from 'react';
@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const page = query.page as string;
   const detailsQuery = query.details;
 
-  let details;
+  let details: Planet | null;
 
   if (!page) {
     return {
@@ -43,11 +43,19 @@ export default function App({
   page,
   details,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
-  const [theme] = useState('light');
+  const [theme, setTheme] = useState('light');
+
+  function themeToggleHandler(): void {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  }
 
   return (
-    <ThemeContext.Provider value={'theme'}>
-      <div className={theme === 'light' ? 'app' : 'app app-dark'}>
+    <ThemeContext.Provider value={theme}>
+      <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
         <div className="sidebar">
           <SearchSection search={search} />
           <section className="search-items-section">
@@ -59,6 +67,9 @@ export default function App({
             <PlanetData details={details} page={page} search={search} />
           )}
         </section>
+        <button className="button theme-toggle" onClick={themeToggleHandler}>
+          {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
+        </button>
       </div>
     </ThemeContext.Provider>
   );

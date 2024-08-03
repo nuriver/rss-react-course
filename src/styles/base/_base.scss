@@ -6,8 +6,7 @@ html * {
 
 @font-face {
   font-family: 'Inter';
-  src: url('/src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf')
-    format('truetype');
+  src: url('/assets/fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
 }
 
 body {
@@ -28,7 +27,7 @@ body {
 }
 
 .app-dark {
-  background-image: url(/src/assets/images/a7588dae699a1d5342d585c901bbf36d.jpg);
+  background-image: url('/assets/images/a7588dae699a1d5342d585c901bbf36d.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 0px;
@@ -47,6 +46,7 @@ body {
     border-left: 6px solid $item-border;
     border-right: 6px solid $item-border;
     color: $item-border;
+    font-weight: 500;
     &:hover {
       border: 1px solid $item-border;
       border-left: 6px solid $item-border;

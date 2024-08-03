@@ -25,7 +25,7 @@ export default function SearchSection({
   return (
     <div
       className={
-        theme !== 'dark'
+        theme === 'light'
           ? 'search-section'
           : 'search-section search-section-dark'
       }

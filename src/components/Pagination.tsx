@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import createPagination from '../utilities/createPagination';
-import { ThemeContext } from '../App';
+import { ThemeContext } from '../context/ThemeContext';
 
 export default function Pagination({
   count,
@@ -18,7 +18,7 @@ export default function Pagination({
   return (
     <div
       className={
-        theme === 'light'
+        theme !== 'dark'
           ? 'pagination-wrapper'
           : 'pagination-wrapper pagination-wrapper-dark'
       }

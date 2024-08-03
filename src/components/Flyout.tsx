@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { useContext } from 'react';
-import { ThemeContext } from '../App';
 import { Planet } from '../types/types';
+import { ThemeContext } from '../context/ThemeContext';
 
 export default function Flyout({
   selectedItems,
