@@ -9,34 +9,60 @@ import { useLoading } from '../hooks/useLoading';
 import LoadingIndicator from '../components/LoadingIndicator';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { query } = context;
-  const search = query.search as string;
-  const page = query.page as string;
-  const detailsQuery = query.details;
+  const { query, req } = context;
+  const search = query.search as string | undefined;
+  const page = query.page as string | undefined;
+  const detailsQuery = query.details as string | undefined;
 
-  let details: Planet | null;
-
-  if (!page) {
+  if (req.url === '/') {
     return {
       redirect: {
         destination: `/?search=&page=1`,
         permanent: false,
       },
     };
-  } else {
+  }
+
+  if (typeof search !== 'string' || typeof page !== 'string' || !page) {
+    return {
+      notFound: true,
+    };
+  }
+
+  let planets: PlanetsResponse | null = null;
+  try {
     const res = await fetch(
       `https://swapi.dev/api/planets/?search=${search}&page=${page}`
     );
-    const planets: PlanetsResponse = await res.json();
+    if (!res.ok) {
+      return { notFound: true };
+    }
+    planets = await res.json();
+  } catch {
+    return { notFound: true };
+  }
 
-    if (detailsQuery) {
+  let details: Planet | null = null;
+  if (detailsQuery) {
+    try {
       const res = await fetch(`https://swapi.dev/api/planets/${detailsQuery}`);
+      if (!res.ok) {
+        return { notFound: true };
+      }
       details = await res.json();
-      return { props: { planets, search, page, details } };
-    } else {
-      return { props: { planets, search, page, details: null } };
+    } catch {
+      return { notFound: true };
     }
   }
+
+  return {
+    props: {
+      planets,
+      search,
+      page,
+      details: details || null,
+    },
+  };
 };
 
 export default function App({
