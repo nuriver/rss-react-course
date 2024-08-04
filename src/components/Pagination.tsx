@@ -1,16 +1,14 @@
-import { useContext } from 'react';
 import createPagination from '../utilities/createPagination';
-import { ThemeContext } from '../context/ThemeContext';
 
 export default function Pagination({
   count,
   search,
+  theme,
 }: {
   count: number | undefined;
   search: string;
+  theme: string;
 }): JSX.Element | null {
-  const theme = useContext(ThemeContext);
-
   if (!count || count <= 10) return null;
 
   const paginationItems = createPagination(count, search);

@@ -1,30 +1,38 @@
 import { Planet } from '../types/types';
-import { useContext } from 'react';
 import { useRouter } from 'next/router';
-import { ThemeContext } from '../context/ThemeContext';
 
 export default function PlanetData({
   details,
   page,
   search,
+  theme,
 }: {
   details: Planet;
   page: string;
   search: string;
+  theme: string;
 }): JSX.Element {
-  return <PlanetDetails details={details} page={page} search={search} />;
+  return (
+    <PlanetDetails
+      details={details}
+      page={page}
+      search={search}
+      theme={theme}
+    />
+  );
 }
 
 export function PlanetDetails({
   details,
   page,
   search,
+  theme,
 }: {
   details: Planet;
   page: string;
   search: string;
+  theme: string;
 }): JSX.Element {
-  const theme = useContext(ThemeContext);
   const router = useRouter();
 
   function closeButtonHandler(): void {

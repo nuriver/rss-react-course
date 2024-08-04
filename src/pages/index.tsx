@@ -1,18 +1,28 @@
 import SearchSection from '../components/SearchSection';
-import { ThemeContext } from '../context/ThemeContext';
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
 import { Planet, PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
-import { useState } from 'react';
 import { useLoading } from '../hooks/useLoading';
 import LoadingIndicator from '../components/LoadingIndicator';
+import { useRouter } from 'next/router';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { query, req } = context;
+  const { query, req, res } = context;
   const search = query.search as string | undefined;
   const page = query.page as string | undefined;
   const detailsQuery = query.details as string | undefined;
+  const themeValue = context.req.cookies.theme;
+
+  let theme;
+
+  if (!themeValue) {
+    const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
+    res.setHeader('Set-Cookie', `theme=light; expires=${expires}; path=/`);
+    theme = 'light';
+  } else {
+    theme = themeValue;
+  }
 
   if (req.url === '/') {
     return {
@@ -61,6 +71,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       search,
       page,
       details: details || null,
+      theme,
     },
   };
 };
@@ -70,37 +81,48 @@ export default function App({
   search,
   page,
   details,
+  theme,
 }: InferGetServerSidePropsType<typeof getServerSideProps>): JSX.Element {
-  const [theme, setTheme] = useState('light');
   const loading = useLoading();
+  const router = useRouter();
 
   function themeToggleHandler(): void {
+    const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
     if (theme === 'light') {
-      setTheme('dark');
+      document.cookie = `theme=dark; expires=${expires}; path=/`;
     } else {
-      setTheme('light');
+      document.cookie = `theme=light; expires=${expires}; path=/`;
     }
+    router.replace(router.asPath);
   }
 
   return (
-    <ThemeContext.Provider value={theme}>
-      <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
-        {loading && <LoadingIndicator />}
-        <div className="sidebar">
-          <SearchSection />
-          <section className="search-items-section">
-            <SearchItemsWrapper planets={planets} page={page} search={search} />
-          </section>
-        </div>
-        <section className="details">
-          {details && (
-            <PlanetData details={details} page={page} search={search} />
-          )}
+    <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
+      {loading && <LoadingIndicator />}
+      <div className="sidebar">
+        <SearchSection theme={theme} />
+        <section className="search-items-section">
+          <SearchItemsWrapper
+            planets={planets}
+            page={page}
+            search={search}
+            theme={theme}
+          />
         </section>
-        <button className="button theme-toggle" onClick={themeToggleHandler}>
-          {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
-        </button>
       </div>
-    </ThemeContext.Provider>
+      <section className="details">
+        {details && (
+          <PlanetData
+            details={details}
+            page={page}
+            search={search}
+            theme={theme}
+          />
+        )}
+      </section>
+      <button className="button theme-toggle" onClick={themeToggleHandler}>
+        {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
+      </button>
+    </div>
   );
 }

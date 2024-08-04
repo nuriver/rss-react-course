@@ -1,20 +1,20 @@
 import Pagination from './Pagination';
 import SearchItems from './SearchItems';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { PlanetsResponse } from '../types/types';
-import { ThemeContext } from '../context/ThemeContext';
 import Flyout from './Flyout';
 
 export default function SearchItemsWrapper({
   planets,
   page,
   search,
+  theme,
 }: {
   planets: PlanetsResponse;
   page: string;
   search: string;
+  theme: string;
 }): JSX.Element {
-  const theme = useContext(ThemeContext);
   const [selectedItems, setSelectedItems] = useState([] as string[]);
 
   return (
@@ -32,10 +32,11 @@ export default function SearchItemsWrapper({
         setSelectedItems={setSelectedItems}
         selectedItems={selectedItems}
       />
-      <Pagination count={planets?.count} search={search} />
+      <Pagination count={planets?.count} search={search} theme={theme} />
       <Flyout
         selectedItems={selectedItems}
         setSelectedItems={setSelectedItems}
+        theme={theme}
       />
     </div>
   );

@@ -1,16 +1,16 @@
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
-import { useContext } from 'react';
 import { Planet } from '../types/types';
-import { ThemeContext } from '../context/ThemeContext';
 
 export default function Flyout({
   selectedItems,
   setSelectedItems,
+  theme,
 }: {
   selectedItems: string[];
   setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
+  theme: string;
 }): JSX.Element {
   const dispatch = useAppDispatch();
   const itemsInStore = useAppSelector(
@@ -19,7 +19,6 @@ export default function Flyout({
   const showFlyout = useSelector(
     (state: RootState) => state.selection.showFlyout
   );
-  const theme = useContext(ThemeContext);
   const currentClassName =
     theme === 'light' ? 'flyout-wrapper' : 'flyout-wrapper flyout-wrapper-dark';
 

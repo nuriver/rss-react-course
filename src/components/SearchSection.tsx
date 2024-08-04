@@ -1,18 +1,19 @@
 import {
   ChangeEventHandler,
   FormEventHandler,
-  useContext,
   useEffect,
   useState,
 } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { ThemeContext } from '../context/ThemeContext';
 
-export default function SearchSection(): JSX.Element {
+export default function SearchSection({
+  theme,
+}: {
+  theme: string;
+}): JSX.Element {
   const searchParams = useSearchParams();
   const router = useRouter();
   const searchValue = searchParams.get('search') as string;
-  const theme = useContext(ThemeContext);
 
   const [value, setValue] = useState('');
 
