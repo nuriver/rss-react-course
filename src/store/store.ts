@@ -7,14 +7,12 @@ const rootReducer = combineReducers({
   selection: selectionReducer,
 });
 
-// export const setupStore = (preloadedState?: Partial<RootState>) => {
-//   return configureStore({
-//     reducer: rootReducer,
-//     middleware: (getDefaultMiddleware) =>
-//       getDefaultMiddleware().concat(apiSlice.middleware),
-//     preloadedState,
-//   });
-// };
+export const setupStore = (preloadedState?: Partial<RootState>) => {
+  return configureStore({
+    reducer: rootReducer,
+    preloadedState,
+  });
+};
 
 export const makeStore = () => {
   return configureStore({
