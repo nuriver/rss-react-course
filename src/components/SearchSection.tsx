@@ -14,8 +14,6 @@ export default function SearchSection(): JSX.Element {
   const searchValue = searchParams.get('search') as string;
   const theme = useContext(ThemeContext);
 
-  console.log(searchValue);
-
   const [value, setValue] = useState('');
 
   useEffect(() => {
