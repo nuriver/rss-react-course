@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { Planet } from '../types/types';
+import { useRouter } from 'next/router';
 
 export default function Flyout({
   selectedItems,
@@ -13,6 +14,7 @@ export default function Flyout({
   theme: string;
 }): JSX.Element {
   const dispatch = useAppDispatch();
+  const router = useRouter();
   const itemsInStore = useAppSelector(
     (state: RootState) => state.selection.selectedItems
   );
@@ -55,6 +57,7 @@ export default function Flyout({
           onClick={() => {
             dispatch(unselectAllItems());
             setSelectedItems([]);
+            router.reload();
           }}
         >
           UNSELECT ALL

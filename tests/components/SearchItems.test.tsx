@@ -87,6 +87,13 @@ describe('SearchItems', () => {
 
     expect(itemsInStore.length).toBe(1);
     expect(itemsInStore[0]).toBe(mockPlanets[0]);
+    expect(checkboxes).toBeChecked();
+
+    await user.click(checkboxes);
+    state = store.getState();
+    itemsInStore = state.selection.selectedItems;
+    expect(itemsInStore.length).toBe(0);
+    expect(checkboxes).not.toBeChecked();
   });
 
   it('setSelectedItems should be called when checkbox is clicked', async () => {

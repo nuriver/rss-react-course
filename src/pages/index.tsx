@@ -1,5 +1,9 @@
 import SearchSection from '../components/SearchSection';
-import type { InferGetServerSidePropsType, GetServerSideProps } from 'next';
+import type {
+  InferGetServerSidePropsType,
+  GetServerSideProps,
+  GetServerSidePropsContext,
+} from 'next';
 import { Planet, PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
@@ -7,8 +11,11 @@ import { useLoading } from '../hooks/useLoading';
 import LoadingIndicator from '../components/LoadingIndicator';
 import { useRouter } from 'next/router';
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const { query, req, res } = context;
+
   const search = query.search as string | undefined;
   const page = query.page as string | undefined;
   const detailsQuery = query.details as string | undefined;

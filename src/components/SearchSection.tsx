@@ -4,7 +4,8 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export default function SearchSection({
   theme,

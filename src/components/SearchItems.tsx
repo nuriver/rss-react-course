@@ -51,7 +51,6 @@ export default function SearchItems({
       const planetUrl = planet.url;
       const planetNumber = planetUrl.match(/planets\/(\d+)/);
       if (!planetNumber) throw new Error('No planet number');
-      const isSelected = selectedItems.includes(planet.name);
 
       return (
         <Link
@@ -66,7 +65,7 @@ export default function SearchItems({
             type="checkbox"
             className="search-item-checkbox"
             onClick={handleCheckboxClick}
-            checked={isSelected}
+            defaultChecked={selectedItems.includes(planet.name)}
             onChange={() => {}}
           />
         </Link>

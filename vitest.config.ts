@@ -9,7 +9,8 @@ export default defineConfig({
     setupFiles: '/tests/setup.ts',
     exclude: ['**/oldTest/**', 'node_modules'],
     coverage: {
-      exclude: ['src/main.tsx', '.eslintrc.cjs', 'vitest.config.ts'],
+      provider: 'v8',
+      include: ['src/components/**', 'src/utilities/**', 'src/pages/index.tsx'],
     },
   },
 });

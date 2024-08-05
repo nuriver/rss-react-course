@@ -1,10 +1,11 @@
 import Flyout from '../../src/components/Flyout';
-import { selectItem } from '../../src/features/selection/selectionSlice';
 import { renderWithProviders } from '../customRender';
 import { screen } from '@testing-library/react';
 import { defaultPlanet1, defaultPlanet2 } from '../testData';
-import { act } from 'react';
 import userEvent from '@testing-library/user-event';
+import mockRouter from 'next-router-mock';
+
+vi.mock('next/router', () => require('next-router-mock'));
 
 describe('Flyout', () => {
   const user = userEvent.setup();
@@ -80,5 +81,40 @@ describe('Flyout', () => {
     const state = store.getState();
 
     expect(state.selection.selectedItems.length).toBe(0);
+    expect(mockRouter).toMatchObject({
+      asPath: '/',
+      pathname: '/',
+      query: {},
+    });
+  });
+
+  it('should have correct class name', () => {
+    const selectedItems = [] as string[];
+    const mockSetSelectedItems = vi.fn();
+
+    const { container } = renderWithProviders(
+      <Flyout
+        selectedItems={selectedItems}
+        setSelectedItems={mockSetSelectedItems}
+        theme="light"
+      />
+    );
+    expect(container.firstChild).toHaveClass('flyout-wrapper');
+  });
+
+  it('should have correct class name', () => {
+    const selectedItems = [] as string[];
+    const mockSetSelectedItems = vi.fn();
+
+    const { container } = renderWithProviders(
+      <Flyout
+        selectedItems={selectedItems}
+        setSelectedItems={mockSetSelectedItems}
+        theme="dark"
+      />
+    );
+    expect(container.firstChild).toHaveClass(
+      'flyout-wrapper flyout-wrapper-dark'
+    );
   });
 });
