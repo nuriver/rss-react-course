@@ -60,7 +60,3 @@ export interface CustomURLSearchParams extends URLSearchParams {
   page: string;
   details?: string;
 }
-
-export interface CustomPageProps {
-  slug: string;
-}

@@ -7,7 +7,7 @@ import type {
 import { Planet, PlanetsResponse } from '../src/types/types';
 import SearchItemsWrapper from '../src/components/SearchItemsWrapper';
 import PlanetData from '../src/components/PlanetData';
-import { useLoading } from '../src/hooks/useLoading';
+import { useLoading } from './hooks/useLoading';
 import LoadingIndicator from '../src/components/LoadingIndicator';
 import { useRouter } from 'next/router';
 

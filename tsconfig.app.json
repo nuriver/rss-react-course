@@ -34,7 +34,8 @@
     "./next-env.d.ts",
     "legacy/_app.tsx",
     "legacy/_document.tsx",
-    "legacy/index.tsx"
+    "legacy/index.tsx",
+    "legacy/hooks"
   ],
   "exclude": ["./node_modules"]
 }

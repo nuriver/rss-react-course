@@ -4,6 +4,8 @@ import Main from './main';
 import StoreProvider from './StoreProvider';
 import { getDetails, getPlanets } from '../api/api';
 import { cookies, headers } from 'next/headers';
+import { Suspense } from 'react';
+import LoadingIndicator from './loading';
 
 export default async function Page({
   searchParams,
@@ -48,14 +50,16 @@ export default async function Page({
   }
 
   return (
-    <StoreProvider>
-      <Main
-        planets={planets}
-        search={search}
-        page={page}
-        theme={theme}
-        details={details}
-      />
-    </StoreProvider>
+    <Suspense fallback={<LoadingIndicator />}>
+      <StoreProvider>
+        <Main
+          planets={planets}
+          search={search}
+          page={page}
+          theme={theme}
+          details={details}
+        />
+      </StoreProvider>
+    </Suspense>
   );
 }

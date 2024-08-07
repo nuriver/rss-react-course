@@ -65,7 +65,7 @@ export default function SearchItems({
             type="checkbox"
             className="search-item-checkbox"
             onClick={handleCheckboxClick}
-            defaultChecked={selectedItems.includes(planet.name)}
+            checked={selectedItems.includes(planet.name)}
             onChange={() => {}}
           />
         </Link>

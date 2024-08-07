@@ -4,6 +4,7 @@ import SearchSection from '../components/SearchSection';
 import { Planet, PlanetsResponse } from '../types/types';
 import SearchItemsWrapper from '../components/SearchItemsWrapper';
 import PlanetData from '../components/PlanetData';
+import setCookie from './actions';
 
 export default function Main({
   planets,
@@ -18,22 +19,16 @@ export default function Main({
   details: Planet | null;
   theme: string;
 }): JSX.Element {
-  // const loading = useLoading();
-  // const router = useRouter();
-
-  // function themeToggleHandler(): void {
-  //   const expires = new Date(Date.now() + 1 * 864e5).toUTCString();
-  //   if (theme === 'light') {
-  //     document.cookie = `theme=dark; expires=${expires}; path=/`;
-  //   } else {
-  //     document.cookie = `theme=light; expires=${expires}; path=/`;
-  //   }
-  //   router.replace(router.asPath);
-  // }
+  function themeToggleHandler(): void {
+    if (theme === 'light') {
+      setCookie('dark');
+    } else {
+      setCookie('light');
+    }
+  }
 
   return (
     <div className={theme !== 'dark' ? 'app' : 'app app-dark'}>
-      {/* {loading && <LoadingIndicator />} */}
       <div className="sidebar">
         <SearchSection theme={theme} />
         <section className="search-items-section">
@@ -55,7 +50,7 @@ export default function Main({
           />
         )}
       </section>
-      <button className="button theme-toggle">
+      <button className="button theme-toggle" onClick={themeToggleHandler}>
         {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
       </button>
     </div>
