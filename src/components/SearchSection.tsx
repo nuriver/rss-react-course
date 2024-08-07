@@ -4,15 +4,15 @@ import {
   useEffect,
   useState,
 } from 'react';
-import { useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/router';
+import { ReadonlyURLSearchParams, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 export default function SearchSection({
   theme,
 }: {
   theme: string;
 }): JSX.Element {
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams() as ReadonlyURLSearchParams;
   const router = useRouter();
   const searchValue = searchParams.get('search') as string;
 

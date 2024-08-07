@@ -1,14 +1,14 @@
-import SearchSection from '../components/SearchSection';
+import SearchSection from '../src/components/SearchSection';
 import type {
   InferGetServerSidePropsType,
   GetServerSideProps,
   GetServerSidePropsContext,
 } from 'next';
-import { Planet, PlanetsResponse } from '../types/types';
-import SearchItemsWrapper from '../components/SearchItemsWrapper';
-import PlanetData from '../components/PlanetData';
-import { useLoading } from '../hooks/useLoading';
-import LoadingIndicator from '../components/LoadingIndicator';
+import { Planet, PlanetsResponse } from '../src/types/types';
+import SearchItemsWrapper from '../src/components/SearchItemsWrapper';
+import PlanetData from '../src/components/PlanetData';
+import { useLoading } from '../src/hooks/useLoading';
+import LoadingIndicator from '../src/components/LoadingIndicator';
 import { useRouter } from 'next/router';
 
 export const getServerSideProps: GetServerSideProps = async (

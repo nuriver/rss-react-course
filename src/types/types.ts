@@ -54,3 +54,13 @@ export interface QueryContextType {
   search: string;
   page: string;
 }
+
+export interface CustomURLSearchParams extends URLSearchParams {
+  search: string;
+  page: string;
+  details?: string;
+}
+
+export interface CustomPageProps {
+  slug: string;
+}

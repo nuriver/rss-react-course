@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { Planet } from '../types/types';
 
 export function PlanetDetails({

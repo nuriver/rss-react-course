@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { Planet } from '../types/types';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 
 export default function Flyout({
   selectedItems,

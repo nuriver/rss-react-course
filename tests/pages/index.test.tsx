@@ -1,5 +1,5 @@
 import { screen, waitFor } from '@testing-library/react';
-import App, { getServerSideProps } from '../../src/pages';
+import App, { getServerSideProps } from '../../legacy';
 import { GetServerSideProps } from 'next';
 import createMockContext from '../createMockContext';
 import { Planet, PlanetsResponse } from '../../src/types/types';

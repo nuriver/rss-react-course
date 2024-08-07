@@ -27,6 +27,14 @@
     "forceConsistentCasingInFileNames": true,
     "incremental": true
   },
-  "include": ["src", "tests", "./dist/types/**/*.ts", "./next-env.d.ts"],
+  "include": [
+    "src",
+    "tests",
+    "./dist/types/**/*.ts",
+    "./next-env.d.ts",
+    "legacy/_app.tsx",
+    "legacy/_document.tsx",
+    "legacy/index.tsx"
+  ],
   "exclude": ["./node_modules"]
 }
