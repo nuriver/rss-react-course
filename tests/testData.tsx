@@ -181,3 +181,10 @@ export const pagination = [
     3
   </Link>,
 ];
+
+export const mockResp = {
+  count: 1,
+  next: null,
+  previous: null,
+  results: [defaultPlanet1],
+};

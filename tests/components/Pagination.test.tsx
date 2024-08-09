@@ -22,4 +22,22 @@ describe('Pagination', () => {
     expect(screen.getByText('2')).toBeInTheDocument();
     expect(screen.getByText('3')).toBeInTheDocument();
   });
+
+  it('should have correct class name when theme is light', () => {
+    const { container } = renderWithProviders(
+      <Pagination count={31} search="" theme="light" />
+    );
+
+    expect(container.firstChild).toHaveClass('pagination-wrapper');
+  });
+
+  it('should have correct class name when theme is dark', () => {
+    const { container } = renderWithProviders(
+      <Pagination count={31} search="" theme="dark" />
+    );
+
+    expect(container.firstChild).toHaveClass(
+      'pagination-wrapper pagination-wrapper-dark'
+    );
+  });
 });

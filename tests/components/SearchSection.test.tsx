@@ -1,17 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import SearchSection from '../../src/components/SearchSection';
 import userEvent from '@testing-library/user-event';
+import SearchSection from '../../src/components/SearchSection';
 import { SearchParamsContext } from 'next/dist/shared/lib/hooks-client-context.shared-runtime';
 
-vi.mock('next/navigation', () => {
-  return {
-    __esModule: true,
-    useSearchParams: () => ({
-      get: () => {},
-    }),
-  };
-});
-vi.mock('next/router', () => require('next-router-mock'));
+vi.mock('next/navigation', () => ({
+  ...require('next-router-mock'),
+  useSearchParams: () => ({
+    get: () => {},
+  }),
+}));
+
 const user = userEvent.setup();
 
 describe('SearchSection', () => {

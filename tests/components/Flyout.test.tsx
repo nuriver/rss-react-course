@@ -1,9 +1,9 @@
-import Flyout from '../../src/components/Flyout';
-import { renderWithProviders } from '../customRender';
 import { screen } from '@testing-library/react';
-import { defaultPlanet1, defaultPlanet2 } from '../testData';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
+import { renderWithProviders } from '../customRender';
+import Flyout from '../../src/components/Flyout';
+import { defaultPlanet1, defaultPlanet2 } from '../testData';
 
 vi.mock('next/router', () => require('next-router-mock'));
 

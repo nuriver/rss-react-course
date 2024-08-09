@@ -1,10 +1,10 @@
 import { screen, waitFor } from '@testing-library/react';
-import App, { getServerSideProps } from '../../legacy';
+import App, { getServerSideProps } from '.';
 import { GetServerSideProps } from 'next';
 import createMockContext from '../createMockContext';
-import { Planet, PlanetsResponse } from '../../src/types/types';
-import { defaultPlanet1 } from '../testData';
-import { renderWithProviders } from '../customRender';
+import { Planet, PlanetsResponse } from '../src/types/types';
+import { defaultPlanet1 } from '../tests/testData';
+import { renderWithProviders } from '../tests/customRender';
 import userEvent from '@testing-library/user-event';
 import mockRouter from 'next-router-mock';
 import { RouterProvider } from 'react-router-dom';

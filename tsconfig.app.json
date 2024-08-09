@@ -35,7 +35,16 @@
     "legacy/_app.tsx",
     "legacy/_document.tsx",
     "legacy/index.tsx",
-    "legacy/hooks"
+    "legacy/hooks",
+    "legacy/Flyout.test.tsx",
+    "tests/components/LoadingIndicator.test.tsx",
+    "legacy/Pagination.test.tsx",
+    "legacy/PlanetData.test.tsx",
+    "legacy/PlanetDetails.test.tsx",
+    "legacy/SearchItems.test.tsx",
+    "legacy/SearchItemsWrapper.test.tsx",
+    "legacy/SearchSection.test.tsx",
+    "legacy/index.test.tsx"
   ],
   "exclude": ["./node_modules"]
 }

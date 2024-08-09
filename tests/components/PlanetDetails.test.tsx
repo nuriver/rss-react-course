@@ -1,11 +1,12 @@
 import mockRouter from 'next-router-mock';
-import { renderWithProviders } from '../customRender';
-import { defaultPlanet1, detailsMockResponseValues } from '../testData';
+
 import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+import { renderWithProviders } from '../customRender';
 import { PlanetDetails } from '../../src/components/PlanetDetails';
+import { defaultPlanet1, detailsMockResponseValues } from '../testData';
 
-vi.mock('next/router', () => require('next-router-mock'));
+vi.mock('next/navigation', () => require('next-router-mock'));
 const user = userEvent.setup();
 
 describe('PlanetDetails', () => {

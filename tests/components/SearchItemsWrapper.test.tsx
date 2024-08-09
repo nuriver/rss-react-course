@@ -1,7 +1,7 @@
-import SearchItemsWrapper from '../../src/components/SearchItemsWrapper';
-import { renderWithProviders } from '../customRender';
 import { screen } from '@testing-library/react';
 import { defaultPlanet1 } from '../testData';
+import { renderWithProviders } from '../customRender';
+import SearchItemsWrapper from '../../src/components/SearchItemsWrapper';
 
 vi.mock('next/router', () => require('next-router-mock'));
 

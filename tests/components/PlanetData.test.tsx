@@ -1,8 +1,8 @@
-import { defaultPlanet1 } from '../testData';
-import { renderWithProviders } from '../customRender';
 import PlanetData from '../../src/components/PlanetData';
+import { renderWithProviders } from '../customRender';
+import { defaultPlanet1 } from '../testData';
 
-vi.mock('next/router', () => require('next-router-mock'));
+vi.mock('next/navigation', () => require('next-router-mock'));
 
 describe('PlanetData', () => {
   it('should renders without errors', () => {

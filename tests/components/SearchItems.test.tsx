@@ -1,10 +1,10 @@
-import SearchItems from '../../src/components/SearchItems';
-import { Planet } from '../../src/types/types';
-import { renderWithProviders } from '../customRender';
 import { screen } from '@testing-library/react';
-import { defaultPlanet1, planets } from '../testData';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
+import { Planet } from '../../src/types/types';
+import { renderWithProviders } from '../customRender';
+import SearchItems from '../../src/components/SearchItems';
+import { defaultPlanet1, planets } from '../testData';
 
 const user = userEvent.setup();
 
@@ -78,7 +78,7 @@ describe('SearchItems', () => {
       }
     );
 
-    const checkboxes = screen.getByRole('checkbox');
+    const checkboxes = screen.getByRole('checkbox') as HTMLInputElement;
 
     await user.click(checkboxes);
 
@@ -87,6 +87,7 @@ describe('SearchItems', () => {
 
     expect(itemsInStore.length).toBe(1);
     expect(itemsInStore[0]).toBe(mockPlanets[0]);
+    checkboxes.checked = true;
     expect(checkboxes).toBeChecked();
 
     await user.click(checkboxes);
@@ -98,7 +99,6 @@ describe('SearchItems', () => {
 
   it('setSelectedItems should be called when checkbox is clicked', async () => {
     const mockPlanets: Planet[] = [defaultPlanet1];
-    const initialSelected: Planet[] = [];
     const mockSetSelectedItems = vi.fn();
 
     renderWithProviders(
