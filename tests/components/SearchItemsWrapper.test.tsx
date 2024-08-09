@@ -1,18 +1,11 @@
 import { BrowserRouter, useNavigate, useParams } from 'react-router-dom';
 import SearchItemsWrapper from '../../src/components/SearchItemsWrapper';
 import { renderWithProviders } from '../customRender';
-import {
-  getAllByRole,
-  getByRole,
-  getByText,
-  screen,
-  waitFor,
-} from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import { setupServer } from 'msw/node';
 import createHandlers from '../createHandlers';
 import { mockDataPaginationTrue } from '../testData';
 import { ThemeContext } from '../../src/App';
-import { delay, http, HttpResponse } from 'msw';
 
 vi.mock('react-router-dom');
 
