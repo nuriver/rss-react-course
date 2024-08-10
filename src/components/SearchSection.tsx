@@ -1,35 +1,37 @@
 import {
   ChangeEventHandler,
-  MouseEventHandler,
+  FormEventHandler,
   useEffect,
   useState,
 } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from '@remix-run/react';
 
 export default function SearchSection(): JSX.Element {
-  const [query, setQuery] = useState('');
+  const [value, setValue] = useState('');
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const searchValue = searchParams.get('search') as string;
   const theme = 'light';
 
-  const searchClickHandler: MouseEventHandler<HTMLButtonElement> = (
+  const searchClickHandler: FormEventHandler<HTMLFormElement> = (
     event
   ): void => {
     event.preventDefault();
-    localStorage.setItem('searchQuery', query);
-    navigate('/search/1');
+
+    const form = event.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    navigate(`/?search=${data.search}&page=1`);
   };
 
   useEffect(() => {
-    const storedQuery = localStorage.getItem('searchQuery');
-    if (storedQuery) {
-      setQuery(storedQuery);
-    }
-  }, []);
+    setValue(searchValue);
+  }, [searchValue]);
 
-  const inputHandler: ChangeEventHandler<HTMLInputElement> = (event): void => {
-    const target = event.target as HTMLInputElement;
-    const inputValue = target.value.trim();
-    setQuery(inputValue);
+  const inputChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
+    const input = event.target as HTMLInputElement;
+    setValue(input.value);
   };
 
   return (
@@ -41,17 +43,18 @@ export default function SearchSection(): JSX.Element {
       }
       role="search"
     >
-      <div className="search-wrapper">
+      <form onSubmit={searchClickHandler} className="search-wrapper">
         <input
+          name="search"
           type="text"
           className="search-input"
-          onChange={inputHandler}
-          value={query}
+          onChange={inputChangeHandler}
+          value={value}
         />
-        <button className="button search-button" onClick={searchClickHandler}>
+        <button className="button search-button" type="submit">
           SEARCH
         </button>
-      </div>
+      </form>
     </div>
   );
 }
