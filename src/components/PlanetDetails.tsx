@@ -10,18 +10,13 @@ export default function PlanetDetails({
   const [searchParams] = useSearchParams();
   const search = searchParams.get('search');
   const page = searchParams.get('page');
-  const theme = 'light';
 
   function closeButtonHandler(): void {
     navigate(`/?search=${search}&page=${page}`);
   }
 
   return (
-    <div
-      className={
-        theme === 'light' ? 'planet-data' : 'planet-data planet-data-dark'
-      }
-    >
+    <div className="planet-data">
       <h1>{planet.name}</h1>
       <p className="planet-data-descriptor">
         <span>rotation_period:</span> {planet.rotation_period}

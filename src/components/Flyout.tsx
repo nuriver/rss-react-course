@@ -3,7 +3,7 @@ import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { Planet } from '../types/types';
 
-export default function Flyout(): JSX.Element {
+export default function Flyout({ theme }: { theme: string }): JSX.Element {
   const dispatch = useAppDispatch();
   const selectedItems = useAppSelector(
     (state: RootState) => state.selection.selectedItems
@@ -11,7 +11,6 @@ export default function Flyout(): JSX.Element {
   const showFlyout = useSelector(
     (state: RootState) => state.selection.showFlyout
   );
-  const theme = 'light';
   const currentClassName =
     theme === 'light' ? 'flyout-wrapper' : 'flyout-wrapper flyout-wrapper-dark';
 

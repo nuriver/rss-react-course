@@ -6,12 +6,15 @@ import {
 } from 'react';
 import { useNavigate, useSearchParams } from '@remix-run/react';
 
-export default function SearchSection(): JSX.Element {
+export default function SearchSection({
+  theme,
+}: {
+  theme: string;
+}): JSX.Element {
   const [value, setValue] = useState('');
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const searchValue = searchParams.get('search') as string;
-  const theme = 'light';
 
   const searchClickHandler: FormEventHandler<HTMLFormElement> = (
     event

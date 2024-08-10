@@ -1,4 +1,5 @@
 import {
+  json,
   Links,
   Meta,
   Outlet,
@@ -10,35 +11,33 @@ import '../src/styles/main.css';
 import SearchSection from '../src/components/SearchSection';
 import SearchItemsWrapper from '../src/components/SearchItemsWrapper';
 import getPlanets from '../src/data/getPlanets';
-import { LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
+import { LoaderFunctionArgs } from '@remix-run/node';
 import { PlanetsResponse } from '../src/types/types';
 import { setupStore } from '../src/store/store';
 import { Provider } from 'react-redux';
-import { createContext } from 'react';
-import { useNavigate, useSearchParams } from '@remix-run/react';
+import { useNavigate } from '@remix-run/react';
+import getCookie from '../src/utilities/getCookie';
 
 interface AppLoaderReturnType {
   planets: PlanetsResponse;
   search: string;
   page: string;
+  theme: string;
 }
 
-interface QueryContextType {
-  search: string;
-  page: string;
-}
-
-export const QueryContext = createContext<QueryContextType>({
-  search: '',
-  page: '',
-});
 const store = setupStore();
 
 export const loader = async ({
   request,
-}: LoaderFunctionArgs): Promise<AppLoaderReturnType | TypedResponse<never>> => {
+}: LoaderFunctionArgs): Promise<ReturnType<typeof json>> => {
   const url = new URL(request.url);
   const isDefaultPath = url.pathname === '/' && url.search === '';
+  // const cookieHeader = request.headers.get('Cookie');
+  // const cookie = (await userPrefs.parse(cookieHeader)) || {};
+  // let theme = cookie.no;
+
+  const cookieHeader = request.headers.get('Cookie');
+  const theme = getCookie('theme', cookieHeader) || 'light';
 
   if (isDefaultPath) {
     return redirect('/?search=&page=1');
@@ -46,16 +45,16 @@ export const loader = async ({
 
   const search = url.searchParams.get('search') as string;
   const page = url.searchParams.get('page') as string;
-
   const planets: PlanetsResponse = await getPlanets(search, page);
   //TODO 404
-  return { planets, search, page };
+
+  return json({ planets, search, page, theme });
 };
 
 export default function App() {
-  const { planets, search, page } = useLoaderData() as AppLoaderReturnType;
+  const { planets, search, page, theme } =
+    useLoaderData() as AppLoaderReturnType;
   const navigate = useNavigate();
-  const theme = 'light';
 
   function onClickHandler(target: HTMLElement): void {
     if (
@@ -66,6 +65,15 @@ export default function App() {
     }
   }
 
+  const themeToggleHandler = () => {
+    if (theme === 'light' || !theme) {
+      document.cookie = `theme=dark; path=/; max-age=86400`;
+    } else {
+      document.cookie = `theme=light; path=/; max-age=86400`;
+    }
+    navigate(location.pathname + location.search);
+  };
+
   return (
     <html lang="en">
       <head>
@@ -75,7 +83,6 @@ export default function App() {
         <Links />
       </head>
       <body>
-        <QueryContext.Provider value={{ search, page }}></QueryContext.Provider>
         <Provider store={store}>
           <div className={theme === 'light' ? 'app' : 'app app-dark'}>
             <div
@@ -86,15 +93,20 @@ export default function App() {
                 onClickHandler(target);
               }}
             >
-              <SearchSection />
+              <SearchSection theme={theme} />
               <section className="search-items-section">
-                <SearchItemsWrapper planets={planets} />
+                <SearchItemsWrapper planets={planets} theme={theme} />
               </section>
             </div>
-            <section className="details">
+            <section
+              className={theme === 'light' ? 'details' : 'details details-dark'}
+            >
               <Outlet />
             </section>
-            <button className="button theme-toggle">
+            <button
+              className="button theme-toggle"
+              onClick={themeToggleHandler}
+            >
               {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
             </button>
           </div>

@@ -53,28 +53,30 @@
   }
 }
 
-.planet-data.planet-data-dark {
-  background: none !important;
-  box-shadow: 2px 2px 40px rgb(35, 35, 35) !important;
-  background-color: $main-background !important;
-  h1 {
-    background: none;
-    background-color: $item-background;
-    color: $button-border;
-  }
-  .planet-data-descriptor {
-    background-color: $item-background;
-    color: white;
-    span {
-      color: $item-border;
+.details.details-dark {
+  .planet-data {
+    background: none !important;
+    box-shadow: 2px 2px 40px rgb(35, 35, 35) !important;
+    background-color: $main-background !important;
+    h1 {
+      background: none;
+      background-color: $item-background;
+      color: $button-border;
     }
-  }
-  .details-close-button {
-    background-color: $item-background;
-    border: 3px solid $button-border;
-    color: $button-border;
-    &:hover {
-      box-shadow: none;
+    .planet-data-descriptor {
+      background-color: $item-background;
+      color: white;
+      span {
+        color: $item-border;
+      }
+    }
+    .details-close-button {
+      background-color: $item-background;
+      border: 3px solid $button-border;
+      color: $button-border;
+      &:hover {
+        box-shadow: none;
+      }
     }
   }
 }
