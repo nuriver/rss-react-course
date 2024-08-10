@@ -49,3 +49,11 @@ export interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: Partial<RootState>;
   store?: AppStore;
 }
+
+export interface AppLoaderReturnType {
+  planets: PlanetsResponse;
+  search: string;
+  page: string;
+  theme: string;
+  savedItems: string[];
+}

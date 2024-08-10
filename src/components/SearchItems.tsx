@@ -1,34 +1,19 @@
 import { MouseEventHandler } from 'react';
 import { Planet } from '../types/types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { selectItem, unselectItem } from '../features/selection/selectionSlice';
-import { RootState } from '../store/store';
 import { Link, useSearchParams } from '@remix-run/react';
-
-// interface LoaderData {
-//   search: string;
-//   page: string;
-// }
-
-// export const loader = async ({ request }: LoaderFunctionArgs): Promise<LoaderData> => {
-//   const url = new URL(request.url);
-
-//   const search = url.searchParams.get('search') as string;
-//   const page = url.searchParams.get('page') as string;
-
-//   console.log(search)
-//   return { search, page } as LoaderData;
-// };
 
 export default function SearchItems({
   planets,
+  selectedItems,
+  setSelectedItems,
 }: {
   planets: Planet[] | undefined;
+  selectedItems: string[];
+  setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
 }): JSX.Element | JSX.Element[] {
   const dispatch = useDispatch();
-  const selectedItems = useSelector(
-    (state: RootState) => state.selection.selectedItems
-  );
   const [searchParams] = useSearchParams();
   const search = searchParams.get('search');
   const page = searchParams.get('page');
@@ -48,9 +33,16 @@ export default function SearchItems({
 
       if (checkbox.checked) {
         dispatch(selectItem(targetPlanet));
+        setSelectedItems((prevSelectedItems) => [
+          ...prevSelectedItems,
+          targetName,
+        ]);
       }
       if (!checkbox.checked) {
         dispatch(unselectItem(targetName));
+        setSelectedItems((prevSelectedItems) =>
+          prevSelectedItems.filter((item) => item !== targetName)
+        );
       }
     };
 
@@ -58,7 +50,6 @@ export default function SearchItems({
       const planetUrl = planet.url;
       const planetNumber = planetUrl.match(/planets\/(\d+)/);
       if (!planetNumber) throw new Error('No planet number');
-      const isSelected = selectedItems.includes(planet);
 
       return (
         <Link
@@ -73,7 +64,7 @@ export default function SearchItems({
             type="checkbox"
             className="search-item-checkbox"
             onClick={handleCheckboxClick}
-            checked={isSelected}
+            checked={selectedItems.includes(planet.name)}
             onChange={() => {}}
           />
         </Link>

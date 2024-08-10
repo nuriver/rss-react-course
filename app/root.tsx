@@ -13,18 +13,11 @@ import SearchSection from '../src/components/SearchSection';
 import SearchItemsWrapper from '../src/components/SearchItemsWrapper';
 import getPlanets from '../src/data/getPlanets';
 import { LoaderFunctionArgs } from '@remix-run/node';
-import { PlanetsResponse } from '../src/types/types';
+import { AppLoaderReturnType, PlanetsResponse } from '../src/types/types';
 import { setupStore } from '../src/store/store';
 import { Provider } from 'react-redux';
 import { useNavigate } from '@remix-run/react';
 import getCookie from '../src/utilities/getCookie';
-
-interface AppLoaderReturnType {
-  planets: PlanetsResponse;
-  search: string;
-  page: string;
-  theme: string;
-}
 
 const store = setupStore();
 
@@ -33,9 +26,6 @@ export const loader = async ({
 }: LoaderFunctionArgs): Promise<ReturnType<typeof json>> => {
   const url = new URL(request.url);
   const isDefaultPath = url.pathname === '/' && url.search === '';
-  // const cookieHeader = request.headers.get('Cookie');
-  // const cookie = (await userPrefs.parse(cookieHeader)) || {};
-  // let theme = cookie.no;
 
   const cookieHeader = request.headers.get('Cookie');
   const theme = getCookie('theme', cookieHeader) || 'light';
@@ -53,7 +43,7 @@ export const loader = async ({
 };
 
 export default function App() {
-  const { planets, search, page, theme } =
+  const { planets, search, page, theme, savedItems } =
     useLoaderData() as AppLoaderReturnType;
   const navigate = useNavigate();
   const navigation = useNavigation();

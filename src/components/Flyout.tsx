@@ -3,7 +3,13 @@ import { RootState, useAppDispatch, useAppSelector } from '../store/store';
 import { unselectAllItems } from '../features/selection/selectionSlice';
 import { Planet } from '../types/types';
 
-export default function Flyout({ theme }: { theme: string }): JSX.Element {
+export default function Flyout({
+  theme,
+  setSelectedItems,
+}: {
+  theme: string;
+  setSelectedItems: React.Dispatch<React.SetStateAction<string[]>>;
+}): JSX.Element {
   const dispatch = useAppDispatch();
   const selectedItems = useAppSelector(
     (state: RootState) => state.selection.selectedItems
@@ -44,7 +50,11 @@ export default function Flyout({ theme }: { theme: string }): JSX.Element {
       <div className="flyout-buttons-container">
         <button
           className="button flyout-unselect-all-button"
-          onClick={() => dispatch(unselectAllItems())}
+          onClick={() => {
+            dispatch(unselectAllItems());
+            setSelectedItems([]);
+            // window.location.reload();
+          }}
         >
           UNSELECT ALL
         </button>
