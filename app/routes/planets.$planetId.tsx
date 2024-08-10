@@ -1,8 +1,9 @@
-import PlanetDetails from './PlanetDetails';
 import { LoaderFunctionArgs } from '@remix-run/node';
-import getDetails from '../data/getDetails';
-import { Planet } from '../types/types';
+
 import { useLoaderData } from '@remix-run/react';
+import { Planet } from '../../src/types/types';
+import getDetails from '../../src/data/getDetails';
+import PlanetDetails from '../../src/components/PlanetDetails';
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
   const planetId = params.planetId as string;

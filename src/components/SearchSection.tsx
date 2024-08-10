@@ -1,17 +1,15 @@
 import {
   ChangeEventHandler,
   MouseEventHandler,
-  useContext,
   useEffect,
   useState,
 } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ThemeContext } from '../App';
 
 export default function SearchSection(): JSX.Element {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
-  const theme = useContext(ThemeContext);
+  const theme = 'light';
 
   const searchClickHandler: MouseEventHandler<HTMLButtonElement> = (
     event

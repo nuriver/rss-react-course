@@ -23,5 +23,5 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true
   },
-  "include": ["src", "tests", "app"]
+  "include": ["src", "tests", "app", "legacy/App.tsx", "legacy/main.tsx"]
 }

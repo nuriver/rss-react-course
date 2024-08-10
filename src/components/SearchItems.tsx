@@ -1,14 +1,33 @@
 import { MouseEventHandler } from 'react';
 import { Planet } from '../types/types';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItem, unselectItem } from '../features/selection/selectionSlice';
 import { RootState } from '../store/store';
+import { Link } from '@remix-run/react';
+
+// interface LoaderData {
+//   search: string;
+//   page: string;
+// }
+
+// export const loader = async ({ request }: LoaderFunctionArgs): Promise<LoaderData> => {
+//   const url = new URL(request.url);
+
+//   const search = url.searchParams.get('search') as string;
+//   const page = url.searchParams.get('page') as string;
+
+//   console.log(search)
+//   return { search, page } as LoaderData;
+// };
 
 export default function SearchItems({
   planets,
+  search,
+  page,
 }: {
   planets: Planet[] | undefined;
+  search: string;
+  page: string;
 }): JSX.Element | JSX.Element[] {
   const dispatch = useDispatch();
   const selectedItems = useSelector(
@@ -45,7 +64,8 @@ export default function SearchItems({
       return (
         <Link
           key={planetNumber[1]}
-          to={`planets/${planetNumber[1]}`}
+          // to={`/?search=k&page=1/planets/${planetNumber[1]}`}
+          to={`/planets/${planetNumber[1]}?search=${search}&page=${page}`}
           className="search-item"
           data-name={planet.name}
         >

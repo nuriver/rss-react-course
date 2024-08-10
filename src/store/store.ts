@@ -1,19 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { apiSlice } from '../features/api/apiSlice';
 import selectionReducer from '../features/selection/selectionSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const rootReducer = combineReducers({
-  [apiSlice.reducerPath]: apiSlice.reducer,
   selection: selectionReducer,
 });
 
 export const setupStore = (preloadedState?: Partial<RootState>) => {
   return configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(apiSlice.middleware),
-    preloadedState,
   });
 };
 
