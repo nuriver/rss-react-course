@@ -27,6 +27,7 @@ export default function SearchItems({
       const checkbox = event.target as HTMLInputElement;
       const searchItem = checkbox.closest('.search-item') as HTMLElement;
       const targetName = searchItem.dataset.name as string;
+
       const targetPlanet = planets.find(
         (planet) => planet.name === targetName
       ) as Planet;
@@ -38,6 +39,7 @@ export default function SearchItems({
           targetName,
         ]);
       }
+
       if (!checkbox.checked) {
         dispatch(unselectItem(targetName));
         setSelectedItems((prevSelectedItems) =>

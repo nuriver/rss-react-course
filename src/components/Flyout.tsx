@@ -53,7 +53,6 @@ export default function Flyout({
           onClick={() => {
             dispatch(unselectAllItems());
             setSelectedItems([]);
-            // window.location.reload();
           }}
         >
           UNSELECT ALL

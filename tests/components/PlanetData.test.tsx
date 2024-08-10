@@ -3,7 +3,7 @@ import createHandlers from '../createHandlers';
 import { defaultPlanet1, detailsMockResponseValues } from '../testData';
 import { setupServer } from 'msw/node';
 import { renderWithProviders } from '../customRender';
-import PlanetData from '../../src/components/PlanetData';
+import PlanetData from '../../legacy/PlanetData';
 import { screen, waitFor } from '@testing-library/react';
 import { Planet } from '../../src/types/types';
 

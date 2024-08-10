@@ -18,17 +18,41 @@ import { setupStore } from '../src/store/store';
 import { Provider } from 'react-redux';
 import { useNavigate } from '@remix-run/react';
 import getCookie from '../src/utilities/getCookie';
+import { useRouteError } from '@remix-run/react';
+
+export function ErrorBoundary() {
+  const error = useRouteError();
+  console.error(error);
+  return (
+    <html>
+      <head>
+        <title>Oh no!</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <div className="error-page">
+          <h1>404</h1>
+          <p>Sorry, an unexpected error has occurred.</p>
+          <p>
+            <i>Not found</i>
+          </p>
+        </div>
+        <Scripts />
+      </body>
+    </html>
+  );
+}
 
 const store = setupStore();
 
 export const loader = async ({
   request,
 }: LoaderFunctionArgs): Promise<ReturnType<typeof json>> => {
-  const url = new URL(request.url);
-  const isDefaultPath = url.pathname === '/' && url.search === '';
-
   const cookieHeader = request.headers.get('Cookie');
   const theme = getCookie('theme', cookieHeader) || 'light';
+  const url = new URL(request.url);
+  const isDefaultPath = url.pathname === '/' && url.search === '';
 
   if (isDefaultPath) {
     return redirect('/?search=&page=1');
@@ -36,14 +60,23 @@ export const loader = async ({
 
   const search = url.searchParams.get('search') as string;
   const page = url.searchParams.get('page') as string;
-  const planets: PlanetsResponse = await getPlanets(search, page);
-  //TODO 404
+  const planets: PlanetsResponse | { detail: string } = await getPlanets(
+    search,
+    page
+  );
+
+  if (!page || 'detail' in planets) {
+    throw new Response(null, {
+      status: 404,
+      statusText: 'Not Found',
+    });
+  }
 
   return json({ planets, search, page, theme });
 };
 
 export default function App() {
-  const { planets, search, page, theme, savedItems } =
+  const { planets, search, page, theme } =
     useLoaderData() as AppLoaderReturnType;
   const navigate = useNavigate();
   const navigation = useNavigation();

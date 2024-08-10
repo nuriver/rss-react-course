@@ -23,5 +23,13 @@
     "noFallthroughCasesInSwitch": true,
     "esModuleInterop": true
   },
-  "include": ["src", "tests", "app", "legacy/App.tsx", "legacy/main.tsx"]
+  "include": [
+    "src",
+    "tests",
+    "app",
+    "legacy/App.tsx",
+    "legacy/main.tsx",
+    "ErrorBoundary.tsx",
+    "legacy/PlanetData.tsx"
+  ]
 }

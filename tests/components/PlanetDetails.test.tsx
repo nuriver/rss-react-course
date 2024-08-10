@@ -1,5 +1,5 @@
 import { BrowserRouter, useNavigate } from 'react-router-dom';
-import { PlanetDetails } from '../../src/components/PlanetData';
+import { PlanetDetails } from '../../legacy/PlanetData';
 import { renderWithProviders } from '../customRender';
 import { defaultPlanet1, detailsMockResponseValues } from '../testData';
 import { screen } from '@testing-library/react';

@@ -34,6 +34,7 @@ export default function SearchSection({
 
   const inputChangeHandler: ChangeEventHandler<HTMLInputElement> = (event) => {
     const input = event.target as HTMLInputElement;
+
     setValue(input.value);
   };
 
