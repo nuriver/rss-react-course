@@ -6,6 +6,7 @@ import {
   redirect,
   Scripts,
   useLoaderData,
+  useNavigation,
 } from '@remix-run/react';
 import '../src/styles/main.css';
 import SearchSection from '../src/components/SearchSection';
@@ -55,6 +56,7 @@ export default function App() {
   const { planets, search, page, theme } =
     useLoaderData() as AppLoaderReturnType;
   const navigate = useNavigate();
+  const navigation = useNavigation();
 
   function onClickHandler(target: HTMLElement): void {
     if (
@@ -109,8 +111,14 @@ export default function App() {
             >
               {theme === 'light' ? 'DARK' : 'LIGHT'} THEME
             </button>
+            <div
+              className={
+                navigation.state === 'loading' ? 'loading-indicator' : 'hidden'
+              }
+            >
+              <p>LOADING...</p>
+            </div>
           </div>
-
           <Scripts />
         </Provider>
       </body>
