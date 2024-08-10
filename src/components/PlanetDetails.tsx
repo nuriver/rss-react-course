@@ -1,16 +1,20 @@
 import { Planet } from '../types/types';
+import { useNavigate, useSearchParams } from '@remix-run/react';
 
 export default function PlanetDetails({
   planet,
 }: {
   planet: Planet;
 }): JSX.Element {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get('search');
+  const page = searchParams.get('page');
   const theme = 'light';
 
-  // function closeButtonHandler(pageId: string): void {
-  //   navigate(`/search/${pageId}`);
-  // }
+  function closeButtonHandler(): void {
+    navigate(`/?search=${search}&page=${page}`);
+  }
 
   return (
     <div
@@ -45,9 +49,9 @@ export default function PlanetDetails({
       </p>
       <button
         className="details-close-button"
-        // onClick={() => {
-        //   closeButtonHandler(pageId);
-        // }}
+        onClick={() => {
+          closeButtonHandler();
+        }}
       >
         &#10010;
       </button>

@@ -3,7 +3,7 @@ import { Planet } from '../types/types';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectItem, unselectItem } from '../features/selection/selectionSlice';
 import { RootState } from '../store/store';
-import { Link } from '@remix-run/react';
+import { Link, useSearchParams } from '@remix-run/react';
 
 // interface LoaderData {
 //   search: string;
@@ -22,17 +22,16 @@ import { Link } from '@remix-run/react';
 
 export default function SearchItems({
   planets,
-  search,
-  page,
 }: {
   planets: Planet[] | undefined;
-  search: string;
-  page: string;
 }): JSX.Element | JSX.Element[] {
   const dispatch = useDispatch();
   const selectedItems = useSelector(
     (state: RootState) => state.selection.selectedItems
   );
+  const [searchParams] = useSearchParams();
+  const search = searchParams.get('search');
+  const page = searchParams.get('page');
 
   if (planets && planets.length > 0) {
     const handleCheckboxClick: MouseEventHandler<HTMLInputElement> = (
@@ -64,7 +63,6 @@ export default function SearchItems({
       return (
         <Link
           key={planetNumber[1]}
-          // to={`/?search=k&page=1/planets/${planetNumber[1]}`}
           to={`/planets/${planetNumber[1]}?search=${search}&page=${page}`}
           className="search-item"
           data-name={planet.name}

@@ -14,12 +14,24 @@ import { LoaderFunctionArgs, TypedResponse } from '@remix-run/node';
 import { PlanetsResponse } from '../src/types/types';
 import { setupStore } from '../src/store/store';
 import { Provider } from 'react-redux';
+import { createContext } from 'react';
+import { useNavigate, useSearchParams } from '@remix-run/react';
 
 interface AppLoaderReturnType {
   planets: PlanetsResponse;
   search: string;
   page: string;
 }
+
+interface QueryContextType {
+  search: string;
+  page: string;
+}
+
+export const QueryContext = createContext<QueryContextType>({
+  search: '',
+  page: '',
+});
 const store = setupStore();
 
 export const loader = async ({
@@ -42,8 +54,17 @@ export const loader = async ({
 
 export default function App() {
   const { planets, search, page } = useLoaderData() as AppLoaderReturnType;
-
+  const navigate = useNavigate();
   const theme = 'light';
+
+  function onClickHandler(target: HTMLElement): void {
+    if (
+      target.className.includes('sidebar') ||
+      target.className.includes('search-items-wrapper')
+    ) {
+      navigate(`/?search=${search}&page=${page}`);
+    }
+  }
 
   return (
     <html lang="en">
@@ -54,23 +75,20 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <QueryContext.Provider value={{ search, page }}></QueryContext.Provider>
         <Provider store={store}>
           <div className={theme === 'light' ? 'app' : 'app app-dark'}>
             <div
               className="sidebar"
               role="sidebar"
-              // onClick={(e) => {
-              //   const target = e.target as HTMLElement;
-              //   onClickHandler(target);
-              // }}
+              onClick={(e) => {
+                const target = e.target as HTMLElement;
+                onClickHandler(target);
+              }}
             >
               <SearchSection />
               <section className="search-items-section">
-                <SearchItemsWrapper
-                  planets={planets}
-                  search={search}
-                  page={page}
-                />
+                <SearchItemsWrapper planets={planets} />
               </section>
             </div>
             <section className="details">

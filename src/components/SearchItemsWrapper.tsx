@@ -5,12 +5,8 @@ import { PlanetsResponse } from '../types/types';
 
 export default function SearchItemsWrapper({
   planets,
-  search,
-  page,
 }: {
   planets: PlanetsResponse;
-  search: string;
-  page: string;
 }): JSX.Element {
   const theme = 'light';
 
@@ -22,7 +18,7 @@ export default function SearchItemsWrapper({
           : 'search-items-wrapper search-items-wrapper-dark'
       }
     >
-      <SearchItems planets={planets.results} search={search} page={page} />;
+      <SearchItems planets={planets.results} />
       <Pagination count={planets?.count} />
       <Flyout />
     </div>
