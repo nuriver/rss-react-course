@@ -1,5 +1,5 @@
 import { createRemixStub } from '@remix-run/testing';
-import App, { loader } from '../../app/root';
+import App, { ErrorBoundary, loader } from '../../app/root';
 import { planetResponseTrue } from '../helpers/testData';
 import {
   json,
@@ -16,6 +16,8 @@ import { renderWithProviders } from '../helpers/customRender';
 import { screen, waitFor } from '@testing-library/react';
 import { PlanetsResponse } from '../../src/types/types';
 import userEvent from '@testing-library/user-event';
+
+vi.mock('/src/data/getPlanets.ts');
 
 const mockNavigate = vi.fn();
 const mockNavigation = { state: 'idle' };
@@ -44,6 +46,9 @@ vi.mock('@remix-run/react', () => ({
     theme: 'light',
   }),
   Link: vi.fn(),
+  useRouteError: () => {
+    message: 'Page not found';
+  },
 }));
 
 const user = userEvent.setup();
@@ -86,7 +91,7 @@ describe('root', () => {
     const response = await loader(args);
     expect(response).toEqual(redirect('/?search=&page=1'));
   });
-  it('should', async () => {
+  it('sidebar should navigate', async () => {
     const mockPlanets = planetResponseTrue;
 
     const RemixStub = createRemixStub([
@@ -112,6 +117,15 @@ describe('root', () => {
 
       await user.click(screen.getByRole('sidebar'));
       expect(mockNavigate).toBeCalled();
+    });
+  });
+
+  it('theme toggle should', async () => {
+    renderWithProviders(<ErrorBoundary />);
+
+    await waitFor(async () => {
+      screen.debug();
+      expect(screen.getByText('404')).toBeInTheDocument();
     });
   });
 });
