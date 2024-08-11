@@ -6,9 +6,10 @@ const rootReducer = combineReducers({
   selection: selectionReducer,
 });
 
-export const setupStore = () => {
+export const setupStore = (preloadedState?: Partial<RootState>) => {
   return configureStore({
     reducer: rootReducer,
+    preloadedState,
   });
 };
 

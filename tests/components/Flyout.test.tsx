@@ -1,28 +1,46 @@
 import Flyout from '../../src/components/Flyout';
-import { selectItem } from '../../src/features/selection/selectionSlice';
-import { renderWithProviders } from '../customRender';
-import { screen } from '@testing-library/react';
-import { defaultPlanet1, defaultPlanet2 } from '../testData';
-import { act } from 'react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { ThemeContext } from '../../src/App';
+import { renderWithProviders } from '../helpers/customRender';
+import { createRemixStub } from '@remix-run/testing';
+import { defaultPlanet1, defaultPlanet2 } from '../helpers/testData';
 
-describe('Flyout', () => {
-  const user = userEvent.setup();
+const user = userEvent.setup();
 
-  it('should renders with 0 selected items when there are not any selected items', () => {
-    renderWithProviders(<Flyout />);
+describe('group', () => {
+  const initialSelected = [defaultPlanet1, defaultPlanet2];
+  const mockSetSelectedItems = vi.fn();
 
-    expect(screen.getByText(/SELECTED ITEMS: 0/i)).toBeInTheDocument();
+  it('should should initially has 0 selected items', async () => {
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => (
+          <Flyout setSelectedItems={mockSetSelectedItems} theme="light" />
+        ),
+      },
+    ]);
+
+    renderWithProviders(<RemixStub />);
+
+    await waitFor(() => screen.findByText('SELECTED ITEMS: 0'));
     expect(screen.getByRole('link', { name: 'DOWNLOAD' })).toBeInTheDocument();
     expect(
       screen.getByRole('button', { name: 'UNSELECT ALL' })
     ).toBeInTheDocument();
   });
 
-  it('should render correct number of selected items', () => {
-    const initialSelected = [defaultPlanet1];
-    const { store } = renderWithProviders(<Flyout />, {
+  it('should have correct items showing', () => {
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => (
+          <Flyout setSelectedItems={mockSetSelectedItems} theme="light" />
+        ),
+      },
+    ]);
+
+    renderWithProviders(<RemixStub />, {
       preloadedState: {
         selection: {
           selectedItems: initialSelected,
@@ -30,18 +48,20 @@ describe('Flyout', () => {
         },
       },
     });
-    expect(screen.getByText(/SELECTED ITEMS: 1/i)).toBeInTheDocument();
-
-    act(() => {
-      store.dispatch(selectItem(defaultPlanet2));
-    });
-
     expect(screen.getByText(/SELECTED ITEMS: 2/i)).toBeInTheDocument();
   });
 
-  it('unselect all button should empty selected items storage state', async () => {
-    const initialSelected = [defaultPlanet1, defaultPlanet2];
-    const { store } = renderWithProviders(<Flyout />, {
+  it('unselect button should remove items from storage', async () => {
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => (
+          <Flyout setSelectedItems={mockSetSelectedItems} theme="light" />
+        ),
+      },
+    ]);
+
+    const { store } = renderWithProviders(<RemixStub />, {
       preloadedState: {
         selection: {
           selectedItems: initialSelected,
@@ -59,30 +79,46 @@ describe('Flyout', () => {
     expect(state.selection.selectedItems.length).toBe(0);
   });
 
-  it('should have correct class name with light theme', () => {
-    renderWithProviders(
-      <ThemeContext.Provider value="light">
-        <Flyout />
-      </ThemeContext.Provider>
-    );
-    const lightThemeClassName = 'flyout-wrapper flyout-hidden';
+  it('should have correct class name when theme is light', () => {
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => (
+          <Flyout setSelectedItems={mockSetSelectedItems} theme="light" />
+        ),
+      },
+    ]);
 
-    expect(screen.getByText(/SELECTED ITEMS: 0/i).closest('div')).toHaveClass(
-      lightThemeClassName
-    );
+    const { container } = renderWithProviders(<RemixStub />, {
+      preloadedState: {
+        selection: {
+          selectedItems: initialSelected,
+          showFlyout: true,
+        },
+      },
+    });
+    expect(container.firstChild).toHaveClass('flyout-wrapper');
   });
+  it('should have correct class name when theme is light', () => {
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => (
+          <Flyout setSelectedItems={mockSetSelectedItems} theme="dark" />
+        ),
+      },
+    ]);
 
-  it('should have correct class name with dark theme', () => {
-    renderWithProviders(
-      <ThemeContext.Provider value="dark">
-        <Flyout />
-      </ThemeContext.Provider>
-    );
-
-    const darkThemeClassName =
-      'flyout-wrapper flyout-wrapper-dark flyout-hidden';
-    expect(screen.getByText(/SELECTED ITEMS: 0/i).closest('div')).toHaveClass(
-      darkThemeClassName
+    const { container } = renderWithProviders(<RemixStub />, {
+      preloadedState: {
+        selection: {
+          selectedItems: initialSelected,
+          showFlyout: true,
+        },
+      },
+    });
+    expect(container.firstChild).toHaveClass(
+      'flyout-wrapper flyout-wrapper-dark'
     );
   });
 });

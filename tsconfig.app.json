@@ -8,6 +8,7 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "types": ["vitest/globals"],
+    "sourceMap": true,
 
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
@@ -27,9 +28,8 @@
     "src",
     "tests",
     "app",
-    "legacy/App.tsx",
-    "legacy/main.tsx",
-    "ErrorBoundary.tsx",
-    "legacy/PlanetData.tsx"
+    "tests/components/SearchItemsWrapper.test.tsx",
+    "tests/routes",
+    "tests/routes/root.test.tsx"
   ]
 }

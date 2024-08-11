@@ -12,6 +12,7 @@
     "repair": "npm run lint && npm run format:fix",
     "test:ui": "vitest --ui",
     "coverage": "vitest --coverage",
+    "coverage:nyc": "nyc npm test",
     "dev": "node ./server.js",
     "start": "cross-env NODE_ENV=production node ./server.js"
   },
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@remix-run/dev": "^2.11.1",
+    "@remix-run/testing": "^2.11.1",
     "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
@@ -31,6 +33,7 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitest/coverage-istanbul": "^2.0.5",
     "@vitest/coverage-v8": "^2.0.3",
     "@vitest/ui": "^2.0.3",
     "eslint": "^8.57.0",
@@ -45,6 +48,7 @@
     "jsdom": "^24.1.0",
     "lint-staged": "^12.4.1",
     "msw": "^2.3.4",
+    "nyc": "^17.0.0",
     "prettier": "^2.6.2",
     "sass": "^1.77.6",
     "typescript": "^5.5.2",
