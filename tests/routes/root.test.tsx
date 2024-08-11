@@ -16,6 +16,7 @@ import { renderWithProviders } from '../helpers/customRender';
 import { screen, waitFor } from '@testing-library/react';
 import { PlanetsResponse } from '../../src/types/types';
 import userEvent from '@testing-library/user-event';
+import getPlanets from '../../src/data/getPlanets';
 
 vi.mock('/src/data/getPlanets.ts');
 
@@ -72,7 +73,7 @@ describe('root', () => {
       },
     ]);
 
-    renderWithProviders(<RemixStub />);
+    const { container } = renderWithProviders(<RemixStub />);
 
     await waitFor(() => {
       screen.debug();
@@ -116,7 +117,7 @@ describe('root', () => {
       expect(screen.getByRole('sidebar')).toBeInTheDocument();
 
       await user.click(screen.getByRole('sidebar'));
-      expect(mockNavigate).toBeCalled();
+      expect(mockNavigate).toBeCalledWith('/?search=&page=1');
     });
   });
 
@@ -126,6 +127,62 @@ describe('root', () => {
     await waitFor(async () => {
       screen.debug();
       expect(screen.getByText('404')).toBeInTheDocument();
+    });
+  });
+
+  it('should get 404 for not page present', async () => {
+    const url = new URL('http://localhost:3000/?search=earth');
+    const request = new Request(url.toString());
+
+    try {
+      await loader({ request, context: {}, params: {} });
+    } catch (error) {
+      expect((error as Response).status).toEqual(404);
+    }
+  });
+
+  it('should return correct value', async () => {
+    const url = new URL('http://localhost:3000/?search=&page=1');
+    const request = new Request(url.toString());
+    const mockPlanets = planetResponseTrue;
+    vi.mocked(getPlanets).mockResolvedValue(mockPlanets);
+
+    const response = await loader({ request, context: {}, params: {} });
+    const jsonResponse = await response.json();
+
+    expect(jsonResponse).toEqual({
+      planets: mockPlanets,
+      search: '',
+      page: '1',
+      theme: 'light',
+    });
+  });
+  it('sidebar should navigate', async () => {
+    const mockPlanets = planetResponseTrue;
+
+    const RemixStub = createRemixStub([
+      {
+        path: '/',
+        Component: () => <App />,
+        loader() {
+          return json({
+            planets: mockPlanets,
+            search: '',
+            page: '1',
+            theme: 'dark',
+          });
+        },
+      },
+    ]);
+
+    renderWithProviders(<RemixStub />);
+
+    await waitFor(async () => {
+      screen.debug();
+      expect(screen.getByText('DARK THEME')).toBeInTheDocument();
+
+      await user.click(screen.getByText('DARK THEME'));
+      expect(mockNavigate).toBeCalledWith('/?search=&page=1');
     });
   });
 });
