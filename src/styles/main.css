@@ -1,0 +1,38 @@
+html * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/images/background_main.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-header {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.uncontrolled-form-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/images/background_form2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.controlled-form-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(/src/assets/images/background_form1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+} /*# sourceMappingURL=main.css.map */
