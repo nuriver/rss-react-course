@@ -3,3 +3,13 @@ html * {
   margin: 0;
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/src/assets/fonts/Inter-VariableFont_slnt\,wght.ttf')
+    format('truetype');
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}

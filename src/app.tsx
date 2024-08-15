@@ -5,17 +5,11 @@ export default function App() {
     <div className="app">
       <header className="main-header">
         <div className="header-links-container">
-          <Link
-            className="button bright-button header-link"
-            to={'/controlled-form'}
-          >
-            GO TO CONTROLLED FORM
+          <Link className="button button-bright" to={'/controlled-form'}>
+            CONTROLLED FORM
           </Link>
-          <Link
-            className="button dark-button header-link"
-            to={'/uncontrolled-form'}
-          >
-            GO TO UNCONTROLLED FORM
+          <Link className="button button-dark" to={'/uncontrolled-form'}>
+            UNCONTROLLED FORM
           </Link>
         </div>
       </header>
