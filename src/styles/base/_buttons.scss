@@ -1,6 +1,7 @@
 .button {
   width: 220px;
   height: 30px;
+  border: none;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,5 +17,9 @@
   }
   &:hover {
     border: 2px solid white;
+  }
+  &:disabled {
+    pointer-events: none;
+    background-color: $bright-button-disabled-background;
   }
 }
