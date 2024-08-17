@@ -1,73 +1,36 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import * as yup from 'yup';
-import { FormData } from '../types/interfaces';
+import { FormData, FormDataWithConvertedImage } from '../types/interfaces';
+import { selectCountries } from '../features/countrySlice';
+import { useAppDispatch, useAppSelector } from '../store/store';
+import { addData } from '../features/formDataSlice';
+import convertToBase64 from '../utilities/convertToBase64';
+import { useNavigate } from 'react-router-dom';
+import schema from '../yup/schema';
 
 export default function ControlledForm() {
-  const schema = yup.object().shape({
-    name: yup
-      .string()
-      .required('Name is a required field')
-      .matches(/^[\p{Lu}]/u, 'Name should start with a capital letter'),
-    age: yup
-      .number()
-      .min(0, 'Age cannot be negative')
-      .max(120, 'Age cannot be more then 120')
-      .transform((value, originalValue) =>
-        originalValue.trim() === '' ? null : value
-      )
-      .nullable()
-      .required('Age is a required field'),
-    gender: yup
-      .string()
-      .oneOf(['male', 'female'], 'Invalid gender selection')
-      .required('Gender is required'),
-    password: yup
-      .string()
-      .required('Password is a required field')
-      .matches(/[0-9]/, 'Password should contain at least 1 number')
-      .matches(/[\p{Ll}]/u, 'Password should contain 1 lowercase letter')
-      .matches(/[\p{Lu}]/u, 'Password should contain 1 uppercase letter')
-      .matches(/[\p{P}\p{S}]/u, 'Password should contain 1 special character'),
-    confirmPassword: yup
-      .string()
-      .required('Please confirm your password')
-      .oneOf([yup.ref('password')], 'Passwords must match'),
-    country: yup.string().required('Country is a required field'),
-    image: yup
-      .mixed<FileList>()
-      .required()
-      .test('Required', 'Please upload image', (value) => {
-        console.log(value);
-        if ((value as FileList).length < 1) return false;
-        return true;
-      })
-      .test('fileType', 'Unsupported File Format', (value) => {
-        return (
-          (value as FileList)[0] &&
-          ['image/jpeg', 'image/png', 'image/gif'].includes(
-            (value as FileList)[0].type
-          )
-        );
-      })
-      .test('fileSize', 'Max file size is 2MB', (file) => {
-        return (file as FileList)[0] && (file as FileList)[0].size <= 2000000;
-      }),
-    tnc: yup
-      .boolean()
-      .oneOf([true], 'You must accept the Terms and Conditions')
-      .required('You must accept the Terms and Conditions'),
-  });
-
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm<FormData>({ resolver: yupResolver(schema), mode: 'onChange' });
+  const dispatch = useAppDispatch();
+  const countries = useAppSelector(selectCountries);
+  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<FormData> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
+    const file = data.image[0];
+    const imageBase64 = (await convertToBase64(file)) as string;
+
+    const formDataWithBase64: FormDataWithConvertedImage = {
+      ...data,
+      image: imageBase64,
+    };
+    dispatch(addData(formDataWithBase64));
+    reset();
+    navigate('/main');
   };
 
   const formValues = watch();
@@ -115,6 +78,17 @@ export default function ControlledForm() {
           </div>
           <div className="form-elements-wrapper">
             <div className="label-wrapper">
+              <label htmlFor="email" className="label">
+                Email
+              </label>
+              {errors.email && (
+                <p className="error-message">{errors.email.message}</p>
+              )}
+            </div>
+            <input type="email" id="email" {...register('email')} />
+          </div>
+          <div className="form-elements-wrapper">
+            <div className="label-wrapper">
               <label htmlFor="password" className="label">
                 Password
               </label>
@@ -158,7 +132,18 @@ export default function ControlledForm() {
                 <p className="error-message">{errors.country.message}</p>
               )}
             </div>
-            <input type="text" id="country" {...register('country')} />
+            <datalist id="country-list">
+              {countries.map((country, index) => (
+                <option key={index} value={country} />
+              ))}
+            </datalist>
+            <input
+              type="text"
+              list="country-list"
+              id="country"
+              autoComplete="off"
+              {...register('country')}
+            />
           </div>
           <div className="form-elements-wrapper">
             <div className="label-wrapper">

@@ -41,11 +41,12 @@ body {
 
 .app {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: url(/src/assets/images/background_main.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  height: 100vh;
 }
 .app .main-header {
   width: 100%;
@@ -65,7 +66,7 @@ body {
 
 .uncontrolled-form-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: url(/src/assets/images/background_form2.jpg);
   background-position: center;
   background-size: cover;
@@ -74,7 +75,7 @@ body {
 
 .controlled-form-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image: url(/src/assets/images/background_form1.jpg);
   background-position: center;
   background-size: cover;
@@ -82,11 +83,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0 40px 0;
 }
 
 .form-container {
   width: 400px;
-  height: 600px;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 20px;
 }

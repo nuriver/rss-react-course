@@ -2,6 +2,7 @@ export interface FormData {
   name: string;
   password: string;
   age: number;
+  email: string;
   confirmPassword: string;
   gender: 'male' | 'female';
   country: string;
@@ -9,8 +10,12 @@ export interface FormData {
   tnc: boolean;
 }
 
+export interface FormDataWithConvertedImage extends Omit<FormData, 'image'> {
+  image: string;
+}
+
 export interface FormDataState {
-  formDataStorage: FormData[];
+  formDataStorage: FormDataWithConvertedImage[];
 }
 
 export interface CountryState {
