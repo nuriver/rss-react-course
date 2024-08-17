@@ -1,17 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import * as yup from 'yup';
-
-interface FormData {
-  name: string;
-  password: string;
-  age: number;
-  confirmPassword: string;
-  gender: 'male' | 'female';
-  country: string;
-  image: FileList;
-  tnc: boolean;
-}
+import { FormData } from '../types/interfaces';
 
 export default function ControlledForm() {
   const schema = yup.object().shape({
