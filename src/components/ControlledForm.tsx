@@ -5,7 +5,7 @@ import { selectCountries } from '../features/countrySlice';
 import { useAppDispatch, useAppSelector } from '../store/store';
 import { addData } from '../features/formDataSlice';
 import convertToBase64 from '../utilities/convertToBase64';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import schema from '../yup/schema';
 
 export default function ControlledForm() {
@@ -176,6 +176,9 @@ export default function ControlledForm() {
           </button>
         </form>
       </div>
+      <Link className="button button-bright header-link" to={'/main'}>
+        MAIN
+      </Link>
     </div>
   );
 }

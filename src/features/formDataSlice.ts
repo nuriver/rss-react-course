@@ -1,9 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import {
-  FormData,
-  FormDataState,
-  FormDataWithConvertedImage,
-} from '../types/interfaces';
+import { FormDataState, FormDataWithConvertedImage } from '../types/interfaces';
 import { RootState } from '../store/store';
 
 const initialState: FormDataState = {

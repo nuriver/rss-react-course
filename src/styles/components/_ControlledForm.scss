@@ -4,12 +4,19 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0 40px 0;
+  .header-link {
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-decoration: none;
+  }
 }
 
 .form-container {
   width: 400px;
   background-color: rgb(0, 0, 0, 0.7);
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   .form-header {
     display: flex;
     justify-content: center;
@@ -18,12 +25,12 @@
     font-size: 25px;
     padding-bottom: 5px;
     border-bottom: 1px solid white;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
   .form-elements-wrapper {
     display: flex;

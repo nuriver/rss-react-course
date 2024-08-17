@@ -1,9 +1,7 @@
 import { Link } from 'react-router-dom';
-// import { useAppSelector } from './store/store';
-// import { selectFormData } from './features/formDataSlice';
+import FormDataItems from './components/FormDataItems';
 
 export default function App() {
-  // const formData = useAppSelector(selectFormData);
   return (
     <div className="app">
       <header className="main-header">
@@ -16,6 +14,7 @@ export default function App() {
           </Link>
         </div>
       </header>
+      <FormDataItems />
     </div>
   );
 }

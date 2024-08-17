@@ -36,7 +36,7 @@ body {
 }
 .button:disabled {
   pointer-events: none;
-  background-color: #f8ad93;
+  background-color: rgb(252, 197, 179);
 }
 
 .app {
@@ -85,11 +85,18 @@ body {
   align-items: center;
   padding: 40px 0 40px 0;
 }
+.controlled-form-wrapper .header-link {
+  width: 150px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  text-decoration: none;
+}
 
 .form-container {
   width: 400px;
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
 }
 .form-container .form-header {
   display: flex;
@@ -99,12 +106,12 @@ body {
   font-size: 25px;
   padding-bottom: 5px;
   border-bottom: 1px solid white;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .form-container form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
 }
 .form-container .form-elements-wrapper {
   display: flex;
@@ -174,4 +181,59 @@ input[type='file'] {
   background: none;
   color: white;
   margin-left: -5px;
+}
+
+.data-items-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+.data-items-wrapper .data-item-container {
+  position: relative;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  width: 170px;
+  height: 260px;
+  padding: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.data-items-wrapper .data-item-container .data-item {
+  color: white;
+  font-size: 13px;
+  font-weight: 200;
+}
+.data-items-wrapper .data-item-container .data-item span {
+  font-weight: 600;
+}
+.data-items-wrapper .data-item-container .data-image-wrapper {
+  margin-top: auto;
+  align-self: center;
+  width: 70px;
+  height: 70px;
+}
+.data-items-wrapper .data-item-container .data-image-wrapper .data-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.data-items-wrapper .data-item-container .new-item-indicator {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
+  padding: 2px;
+  top: -10px;
+  right: -10px;
+  width: 75px;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: red;
+  color: white;
 } /*# sourceMappingURL=main.css.map */

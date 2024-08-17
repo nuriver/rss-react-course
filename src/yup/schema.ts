@@ -41,7 +41,6 @@ const schema = yup.object().shape({
     .mixed<FileList>()
     .required()
     .test('Required', 'Please upload image', (value) => {
-      console.log(value);
       if ((value as FileList).length < 1) return false;
       return true;
     })
