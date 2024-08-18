@@ -37,7 +37,7 @@ export default async function Page({
     redirect('/?search=&page=1');
   }
 
-  if (planets) {
+  if (!planets) {
     return notFound();
   }
 
