@@ -1,0 +1,28 @@
+.uncontrolled-form-wrapper {
+  @include component-background('/src/assets/images/background_form2.jpg');
+  .form-header {
+    color: $dark-button-background !important;
+    font-weight: 700;
+  }
+  .button {
+    background-color: $dark-button-background;
+  }
+  input {
+    &:focus {
+      outline-color: $dark-button-background !important;
+    }
+  }
+  .tnc-error,
+  .space-saver {
+    margin-top: -5px;
+    margin-left: 70px;
+    margin-bottom: -10px;
+  }
+  .space-saver {
+    color: rgb(0, 0, 0, 0);
+    font-size: 15px;
+    &-hidden {
+      display: none;
+    }
+  }
+}

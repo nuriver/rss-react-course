@@ -1,0 +1,12 @@
+@mixin component-background($image-url) {
+  width: 100vw;
+  height: 100%;
+  background-image: url(#{$image-url});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+$bright-button-background: #f7480e;
+$bright-button-disabled-background: rgb(252, 197, 179);
+$dark-button-background: #0a4ecc;

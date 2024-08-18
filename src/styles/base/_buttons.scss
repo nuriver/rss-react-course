@@ -1,0 +1,25 @@
+.button {
+  width: 220px;
+  height: 30px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  font-weight: 500;
+  &-bright {
+    background-color: $bright-button-background;
+  }
+  &-dark {
+    background-color: $dark-button-background;
+  }
+  &:hover {
+    border: 2px solid white;
+  }
+  &:disabled {
+    pointer-events: none;
+    background-color: $bright-button-disabled-background;
+  }
+}
