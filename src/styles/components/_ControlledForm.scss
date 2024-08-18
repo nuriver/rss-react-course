@@ -1,5 +1,9 @@
 .controlled-form-wrapper {
   @include component-background('/src/assets/images/background_form1.jpg');
+}
+
+.controlled-form-wrapper,
+.uncontrolled-form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -72,6 +72,29 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+.uncontrolled-form-wrapper .form-header {
+  color: #0a4ecc !important;
+  font-weight: 700;
+}
+.uncontrolled-form-wrapper .button {
+  background-color: #0a4ecc;
+}
+.uncontrolled-form-wrapper input:focus {
+  outline-color: #0a4ecc !important;
+}
+.uncontrolled-form-wrapper .tnc-error,
+.uncontrolled-form-wrapper .space-saver {
+  margin-top: -5px;
+  margin-left: 70px;
+  margin-bottom: -10px;
+}
+.uncontrolled-form-wrapper .space-saver {
+  color: rgba(0, 0, 0, 0);
+  font-size: 15px;
+}
+.uncontrolled-form-wrapper .space-saver-hidden {
+  display: none;
+}
 
 .controlled-form-wrapper {
   width: 100vw;
@@ -80,12 +103,17 @@ body {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+.controlled-form-wrapper,
+.uncontrolled-form-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px 0 40px 0;
 }
-.controlled-form-wrapper .header-link {
+.controlled-form-wrapper .header-link,
+.uncontrolled-form-wrapper .header-link {
   width: 150px;
   position: absolute;
   top: 20px;

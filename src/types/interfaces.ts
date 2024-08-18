@@ -10,8 +10,11 @@ export interface FormData {
   tnc: boolean;
 }
 
-export interface FormDataWithConvertedImage extends Omit<FormData, 'image'> {
+export interface FormDataWithConvertedImage
+  extends Omit<FormData, 'image' | 'tnc' | 'age'> {
   image: string;
+  tnc?: boolean;
+  age: string | number;
 }
 
 export interface FormDataState {
@@ -21,3 +24,5 @@ export interface FormDataState {
 export interface CountryState {
   countryStorage: string[];
 }
+
+export type Gender = 'male' | 'female';
