@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client';
 import './styles/main.css';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import App from './app';
-import UncontrolledForm from './components/UncontrolledForm';
-import ControlledForm from './components/ControlledForm';
 import { setupStore } from './store/store';
 import { Provider } from 'react-redux';
+import UncontrolledForm from './components/uncontrolledForm';
+import ControlledForm from './components/controlledForm';
 
 const store = setupStore();
 

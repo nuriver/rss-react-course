@@ -6,7 +6,7 @@ import convertToBase64 from '../utilities/convertToBase64';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormEventHandler, useRef } from 'react';
 import * as yup from 'yup';
-import schemaForUncForm from '../yup/shemaForUncForm';
+import schemaForUncForm from '../yup/schemaForUncForm';
 
 export default function UncontrolledForm() {
   const dispatch = useAppDispatch();

@@ -36,17 +36,21 @@ export default function ControlledForm() {
   const formValues = watch();
 
   const isFormFilled = () => {
-    return (
+    const isFilled =
       formValues.name &&
       formValues.age &&
       formValues.gender &&
+      formValues.email &&
       formValues.password &&
       formValues.confirmPassword &&
       formValues.country &&
       formValues.image &&
       formValues.image.length > 0 &&
-      formValues.tnc
-    );
+      formValues.tnc;
+
+    const hasNoErrors = Object.keys(errors).length === 0;
+
+    return isFilled && hasNoErrors;
   };
 
   return (
